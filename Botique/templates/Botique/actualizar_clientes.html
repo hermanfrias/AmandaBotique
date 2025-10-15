@@ -1,0 +1,21 @@
+{% extends "Botique/index.html" %}
+
+{% block Titulo %} <a class="navbar-brand" href="#">Actualizar Clientes | Amanda Botique</a> {% endblock %}
+
+{% block content %}
+
+<div class="container my-5">
+    <h2 class="mb-4 text-center">Actualizar Clientes</h2>
+    <div class="card shadow-sm p-4 mx-auto" style="max-width: 600px;">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class= "text-center mt-3">
+                <button type="submit" class="btn btn-admin">Guardar</button>
+                <a href="{% url 'index' %}" class="btn btn-admin">Volver</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

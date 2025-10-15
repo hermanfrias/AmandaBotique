@@ -1,0 +1,38 @@
+{% extends "Botique/index.html" %}
+
+{% block Titulo %} <a class="navbar-brand" href="#">Listar Proveedores | Amanda Botique</a> {% endblock %}
+
+{% block content %}
+<h2>Lista de Proveedores</h2>
+<form method="GET" action="{% url 'listar_proveedores' %}">
+    <input type="text" name="buscar" placeholder="Buscar por nombre" value="{{ request.GET.buscar }}">
+    <button type="submit">Buscar</button>
+</form>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Contacto</th>
+            <th>Correo Electrónico</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for proveedor in proveedores %}
+        <tr>
+            <td>{{ proveedor.nombre }}</td>
+            <td>{{ proveedor.contacto}}
+            <td>{{ proveedor.email }}</td>
+            <td>{{ proveedor.telefono }}</td>
+            <td>{{ proveedor.direccion }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No se encontraron proveedores.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "Botique/index.html" %}
+
+{% block Titulo %} <a class="navbar-brand" href="#">Listar Catalogo | Amanda Botique</a> {% endblock %}
+
+{% block content %}
+
+<h2>Catalogo de Productos</h2>
+<form method="GET" action="{% url 'listar_catalogo' %}">
+    <input type="text" name="buscar" placeholder="Buscar por nombre" value="{{ request.GET.buscar }}">
+    <button type="submit">Buscar</button>
+</form>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for catalogo in catalogos %}
+        <tr>
+            <td>{{ catalogo.codigo }}</td>
+            <td>{{ catalago.nombre }}</td>
+            <td>{{ catalogo.descripcion }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">No se encontraron productos.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+{% endblock %}
