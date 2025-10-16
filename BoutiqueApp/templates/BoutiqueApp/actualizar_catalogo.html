@@ -1,11 +1,11 @@
-{% extends "Botique/index.html" %}
+{% extends "BoutiqueApp/index.html" %}
 
-{% block Titulo %} <a class="navbar-brand" href="#">Actualizar Proveedores | Amanda Botique</a> {% endblock %}
+{% block Titulo %} <a class="navbar-brand" href="#">Actualizar Catálogo | Amanda Boutique</a> {% endblock %}
 
 {% block content %}
 
 <div class="container my-5">
-    <h2 class="mb-4 text-center">Actualizar Clientes</h2>
+    <h2 class="mb-4 text-center">Actualizar Catalogo</h2>
     <div class="card shadow-sm p-4 mx-auto" style="max-width: 600px;">
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}

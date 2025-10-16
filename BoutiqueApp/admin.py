@@ -19,13 +19,13 @@ class ProveedorAdmin(admin.ModelAdmin):
 
 @admin.register(Catalogo)
 class CatalogoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'descripcion', 'precio')
+    list_display = ('codigo', 'nombre', 'descripcion', 'precio')
     search_fields = ('nombre',)
     list_filter = ('precio',)
     ordering = ('nombre',)
 
 # Personalización del título y encabezado del admin
-admin.site.site_header = "Administración de Amanda Botique"
-admin.site.site_title = "Panel de Administración de Amanda Botique"
+admin.site.site_header = "Administración de Amanda Boutique"
+admin.site.site_title = "Panel de Administración de Amanda Boutique"
 admin.site.index_title = "Bienvenido al Panel de Administración"
 
