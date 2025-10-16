@@ -16,6 +16,7 @@
             <th>Correo Electrónico</th>
             <th>Teléfono</th>
             <th>Dirección</th>
+            <th>Fecha de Registro</th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +27,7 @@
             <td>{{ proveedor.email }}</td>
             <td>{{ proveedor.telefono }}</td>
             <td>{{ proveedor.direccion }}</td>
+            <td>{{ proveedor.fecha_creacion|date:"d/m/Y H:i" }}</td>
         </tr>
         {% empty %}
         <tr>
