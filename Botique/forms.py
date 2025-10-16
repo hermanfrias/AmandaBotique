@@ -5,7 +5,7 @@ class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
         fields = ['identificacion','nombre', 'apellido', 'email', 'telefono', 'direccion', 'fecha_nacimiento']
-        Widget = {
+        widgets = {
             "identificacion": forms.TextInput(attrs={'class':'form-control'}),
             "nombre": forms.TextInput(attrs={'class':'form-control'}),
             "apellido": forms.TextInput(attrs={'class':'form-control'}),
@@ -19,7 +19,7 @@ class CatalogoForm(forms.ModelForm):
     class Meta:
         model = Catalogo
         fields = ['codigo','nombre', 'descripcion', 'precio']
-        Widget = {
+        widgets = {
             "codigo": forms.TextInput(attrs={'class':'form-control'}),
             "nombre": forms.TextInput(attrs={'class':'form-control'}),
             "descripcion": forms.TextInput(attrs={'class':'form-control'}),
@@ -30,7 +30,7 @@ class ProveedorForm(forms.ModelForm):
     class Meta:
         model = Proveedor
         fields = ['nombre', 'contacto', 'email', 'telefono', 'direccion']
-        Widget = {
+        widgets = {
             "nombre": forms.TextInput(attrs={'class':'form-control'}),
             "contacto": forms.TextInput(attrs={'class':'form-control'}),
             "email": forms.EmailInput(attrs={'class':'form-control'}),
