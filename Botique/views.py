@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .forms import ClienteForm, CatalogoForm, ProveedorForm
 from .models import Cliente, Catalogo, Proveedor
 
-# Create your views here.
 def index(request):
     return render(request, "Botique/index.html")
 

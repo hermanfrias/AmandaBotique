@@ -37,4 +37,3 @@ class ProveedorForm(forms.ModelForm):
             "telefono": forms.TextInput(attrs={'class':'form-control'}),
             "direccion": forms.Textarea(attrs={'class':'form-control'}),
         }
-        
