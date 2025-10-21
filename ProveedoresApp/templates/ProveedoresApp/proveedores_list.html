@@ -32,7 +32,7 @@
                 <td>{{ proveedor.telefono }}</td>
                 <td>{{ proveedor.email }}</td>
                 <td>
-                    <a href="#" class="btn btn-info btn-sm">Detalles</a>
+                    <a href='{% url 'proveedores_detail' proveedor.codigo_proveedor %}' class="btn btn-info btn-sm">Ver</a>
                     <a href="#" class="btn btn-warning btn-sm">Editar</a>
                     <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
                 </td>

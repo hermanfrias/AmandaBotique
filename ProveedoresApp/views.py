@@ -27,22 +27,16 @@ class ProveedoresUpdateView(UpdateView):
     form_class = ProveedorForm
     template_name = 'proveedores_create.html'
     success_url = reverse_lazy('proveedores_list')
-    slug_field = 'key_api'
-    slug_url_kwarg = 'key_api'
+    
     
 class ProveedoresDeleteView(DeleteView):
     model = Proveedores
     template_name = 'proveedores_confirm_delete.html'
     success_url = reverse_lazy('proveedores_list')
-    slug_field = 'key_api'
-    slug_url_kwarg = 'key_api'
     
 class ProveedoresDetailView(DetailView):
     model = Proveedores
-    template_name = 'proveedores_detail.html'
-    context_object_name = 'proveedor'
-    slug_field = 'key_api'
-    slug_url_kwarg = 'key_api'
-    
-    
-    
+    template_name = "ProveedoresApp/proveedores_detail.html"
+    context_object_name = "ProveedoresApp"
+    slug_field = "ProveedoresApp.pk"
+    slug_url_kwarg = "ProveedoresApp.pk"

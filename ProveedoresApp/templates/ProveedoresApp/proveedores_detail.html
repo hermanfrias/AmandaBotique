@@ -1,0 +1,29 @@
+{% extends "BoutiqueApp/index.html" %}
+
+{% block Titulo %} Detalle de Proveedores | Amanda Boutique {% endblock %}
+
+{% block contenido %}
+<div class="container my-5">
+  <div class="card shadow p-4 mx-auto" style="max-width: 600px;">
+    <h3 class="text-center mb-3">{{ ProveedoresApp.nombre }}</h3>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Código:</strong> {{ ProveedoresApp.codigo_proveedor }}</li>
+        <li class="list-group-item"><strong>Nombre:</strong> {{ ProveedoresApp.nombre }}</li>
+        <li class="list-group-item"><strong>Rubro:</strong> {{ ProveedoresApp.rubro }}</li>
+        <li class="list-group-item"><strong>Contacto:</strong> {{ ProveedoresApp.contacto }}</li>
+        <li class="list-group-item"><strong>Dirección:</strong> {{ ProveedoresApp.direccion }}</li>
+        <li class="list-group-item"><strong>Teléfono:</strong> {{ ProveedoresApp.telefono }}</li>
+        <li class="list-group-item"><strong>Correo Electrónico:</strong> {{ ProveedoresApp.email }}</li>
+        <li class="list-group-item"><strong>Fecha de Creación:</strong> {{ ProveedoresApp.fecha_creacion }}</li>
+    </ul>
+    <div class="text-center mt-4">
+      <a href="{% url 'provedores_create' ProveedoresApp.pk %}" class="btn btn-warning text-white">Editar</a>
+      <a href="{% url 'proveedores_list' %}" class="btn btn-secondary">Volver</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+    
+    
