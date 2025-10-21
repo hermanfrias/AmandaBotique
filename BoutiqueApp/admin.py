@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Cliente, Proveedor, Catalogo
+from .models import Cliente, Catalogo
 
 # Register your models here.
 
@@ -8,13 +8,6 @@ class ClienteAdmin(admin.ModelAdmin):
     list_display = ('identificacion', 'nombre', 'apellido', 'email', 'telefono', 'fecha_creacion')
     search_fields = ('apellido', 'identificacion', 'email')
     list_filter = ('apellido', 'identificacion')
-    ordering = ('nombre',)
-
-@admin.register(Proveedor)
-class ProveedorAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'contacto', 'telefono')
-    search_fields = ('nombre', 'contacto')
-    list_filter = ('nombre',)
     ordering = ('nombre',)
 
 @admin.register(Catalogo)

@@ -285,18 +285,11 @@
         <!-- 🧭 Nuevo botón de administración -->
         <a href="/admin/" class="btn btn-listar">⚙️ Administración</a>
       <div>
-      <div>
-        <a href="/actualizar_catalogo/" class="btn btn-admin">🔄 Actualizar Catálogo</a>
-        <a href="/actualizar_clientes/" class="btn btn-admin">👩‍🦰 Actualizar Clientes</a>
-        <a href="/actualizar_proveedores/" class="btn btn-admin">🚚 Actualizar Proveedores</a>
-
-        
-
-        <!-- BOTONES PARA LISTAR -->
+    <!-- BOTONES PARA LISTAR -->
     <div class="mb-3">
-      <a href="{% url 'listar_catalogo' %}" class="btn btn-listar">📦 Ver Catálogo</a>
-      <a href="{% url 'listar_clientes' %}" class="btn btn-listar">👩‍🦰 Ver Clientes</a>
-      <a href="{% url 'listar_proveedores' %}" class="btn btn-listar">🚚 Ver Proveedores</a>
+      <a href="{% url 'listar_catalogo' %}" class="btn btn-listar">📦 Catálogo</a>
+      <a href="{% url 'listar_clientes' %}" class="btn btn-listar">👩‍🦰 Clientes</a>
+      <a href="{% url 'proveedores_list' %}" class="btn btn-listar">🚚 Proveedores</a>
     </div>
       </div>
     </div>
