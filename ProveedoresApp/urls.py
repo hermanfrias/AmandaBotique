@@ -4,7 +4,8 @@ from ProveedoresApp.views import *
 urlpatterns = [
     path('', ProveedoresListView.as_view(), name='proveedores_list'),
     path('crear/', ProveedoresCreateView.as_view(), name='proveedores_create'),
-    path('<int:pk>/editar/', ProveedoresUpdateView.as_view(), name='proveedores_update'),
-    path('<int:pk>/eliminar/', ProveedoresDeleteView.as_view(), name='proveedores_delete'),
-    path('<int:pk>/', ProveedoresDetailView.as_view(), name='proveedores_detail'),
+    path('<str:codigo_proveedor>/editar/', ProveedoresUpdateView.as_view(), name='proveedores_update'),
+    path('<str:codigo_proveedor>/eliminar/', ProveedoresDeleteView.as_view(), name='proveedores_confirm_delete'),
+    path('<str:codigo_proveedor>/', ProveedoresDetailView.as_view(), name='proveedores_detail'),
+    
 ]

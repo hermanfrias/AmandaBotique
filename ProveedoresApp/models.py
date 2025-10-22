@@ -1,9 +1,17 @@
 from django.db import models
+import uuid
 
 # Create your models here.
 
+def generar_code():
+    return uuid.uuid4().hex
+
 class Proveedores(models.Model):
-    codigo_proveedor = models.CharField(max_length=32, unique = True)
+    codigo_proveedor = models.CharField(
+        max_length=32,
+        unique=True,
+        default=generar_code
+    )
     nombre = models.CharField(max_length=100)
     contacto = models.CharField(max_length=100)
     email = models.EmailField(unique=True)

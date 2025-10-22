@@ -7,15 +7,15 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView, D
 
 class ProveedoresListView(ListView):
     model = Proveedores
-    template_name = 'proveedores_list.html'
+    template_name = 'ProveedoresApp/proveedores_list.html'
     context_object_name = 'proveedores'
-           
+    
     def get_queryset(self):
         query = self.request.GET.get('buscar', '')
         if query:
-            return Proveedores.objects.filter(nombre=query).order_by('codigo_proveedor')
+            return Proveedores.objects.filter(nombre__icontains=query)
         return Proveedores.objects.all()
-    
+
 class ProveedoresCreateView(CreateView):
     model = Proveedores
     form_class = ProveedorForm
@@ -25,18 +25,21 @@ class ProveedoresCreateView(CreateView):
 class ProveedoresUpdateView(UpdateView):
     model = Proveedores
     form_class = ProveedorForm
-    template_name = 'proveedores_create.html'
+    template_name = 'ProveedoresApp/proveedores_update.html'
     success_url = reverse_lazy('proveedores_list')
-    
+    slug_field = "codigo_proveedor"
+    slug_url_kwarg = "codigo_proveedor"
     
 class ProveedoresDeleteView(DeleteView):
     model = Proveedores
-    template_name = 'proveedores_confirm_delete.html'
+    template_name = 'ProveedoresApp/proveedores_confirm_delete.html'
     success_url = reverse_lazy('proveedores_list')
+    slug_field = "codigo_proveedor"
+    slug_url_kwarg = "codigo_proveedor"
     
 class ProveedoresDetailView(DetailView):
     model = Proveedores
     template_name = "ProveedoresApp/proveedores_detail.html"
-    context_object_name = "ProveedoresApp"
-    slug_field = "ProveedoresApp.pk"
-    slug_url_kwarg = "ProveedoresApp.pk"
+    context_object_name = "proveedores"
+    slug_field = "codigo_proveedor"
+    slug_url_kwarg = "codigo_proveedor"

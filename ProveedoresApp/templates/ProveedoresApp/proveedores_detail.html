@@ -1,29 +1,57 @@
 {% extends "BoutiqueApp/index.html" %}
 
-{% block Titulo %} Detalle de Proveedores | Amanda Boutique {% endblock %}
+{% block title %}Detalle del Proveedor{% endblock %}
 
-{% block contenido %}
+{% block content %}
 <div class="container my-5">
-  <div class="card shadow p-4 mx-auto" style="max-width: 600px;">
-    <h3 class="text-center mb-3">{{ ProveedoresApp.nombre }}</h3>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item"><strong>Código:</strong> {{ ProveedoresApp.codigo_proveedor }}</li>
-        <li class="list-group-item"><strong>Nombre:</strong> {{ ProveedoresApp.nombre }}</li>
-        <li class="list-group-item"><strong>Rubro:</strong> {{ ProveedoresApp.rubro }}</li>
-        <li class="list-group-item"><strong>Contacto:</strong> {{ ProveedoresApp.contacto }}</li>
-        <li class="list-group-item"><strong>Dirección:</strong> {{ ProveedoresApp.direccion }}</li>
-        <li class="list-group-item"><strong>Teléfono:</strong> {{ ProveedoresApp.telefono }}</li>
-        <li class="list-group-item"><strong>Correo Electrónico:</strong> {{ ProveedoresApp.email }}</li>
-        <li class="list-group-item"><strong>Fecha de Creación:</strong> {{ ProveedoresApp.fecha_creacion }}</li>
-    </ul>
-    <div class="text-center mt-4">
-      <a href="{% url 'provedores_create' ProveedoresApp.pk %}" class="btn btn-warning text-white">Editar</a>
-      <a href="{% url 'proveedores_list' %}" class="btn btn-secondary">Volver</a>
+    <div class="card shadow-lg" style="border: 2px solid #F8C8DC; border-radius: 15px;">
+        <div class="card-header text-center" 
+             style="background-color: #F8C8DC; color: #B76E79; font-size: 1.5rem; font-weight: bold;">
+            📋 Detalles del Proveedor
+        </div>
+        <div class="card-body px-5 py-4">
+            <div class="row mb-3">
+                <div class="col-md-4"><strong>Código del Proveedor:</strong></div>
+                <div class="col-md-8">{{ proveedores.codigo_proveedor }}</div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4"><strong>Nombre:</strong></div>
+                <div class="col-md-8">{{ proveedores.nombre }}</div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4"><strong>Teléfono:</strong></div>
+                <div class="col-md-8">{{ proveedores.telefono }}</div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4"><strong>Email:</strong></div>
+                <div class="col-md-8">{{ proveedores.email }}</div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4"><strong>Dirección:</strong></div>
+                <div class="col-md-8">{{ proveedores.direccion }}</div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4"><strong>Fecha de Registro:</strong></div>
+                <div class="col-md-8">{{ proveedores.fecha_creacion }}</div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="{% url 'proveedores_list' %}" class="btn"
+                   style="background-color: #B76E79; color: white; border-radius: 10px; padding: 10px 20px;">
+                    ← Volver a la Lista
+                </a>
+
+                <a href="{% url 'proveedores_update' proveedores.codigo_proveedor %}" class="btn"
+                   style="background-color: #F5B7C3; color: #fff; border-radius: 10px; padding: 10px 20px;">
+                    ✏️ Editar Proveedor
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 {% endblock %}
-
-
-    
-    
