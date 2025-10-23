@@ -1,0 +1,54 @@
+{% extends "BoutiqueApp/index.html" %}
+{% block content %}
+{% block editar_catalogo %}    
+
+<body>
+
+<div class="container my-5">
+    <div class="card shadow mx-auto" style="max-width: 600px;">
+        <div class="card-header text-center">
+            ✨ Editar Catálogo ✨
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+
+                <!-- Campo Código -->
+                <div class="mb-3">
+                    <label for="id_codigo" class="form-label">Código</label>
+                    {{ form.codigo }}
+                </div>
+
+                <!-- Campo Nombre -->
+                <div class="mb-3">
+                    <label for="id_nombre" class="form-label">Nombre del Producto</label>
+                    {{ form.nombre }}
+                </div>
+
+                <!-- Campo Descripción -->
+                <div class="mb-3">
+                    <label for="id_descripcion" class="form-label">Descripción</label>
+                    {{ form.descripcion }}
+                </div>
+
+                <!-- Campo Precio -->
+                <div class="mb-3">
+                    <label for="id_precio" class="form-label">Precio (USD)</label>
+                    {{ form.precio }}
+                </div>
+
+                <!-- Botones -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary px-4">Guardar Cambios</button>
+                    <a href="{% url 'listar_catalogo' %}" class="btn btn-secondary px-4">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+{% endblock editar_catalogo %}
+{% endblock content %}

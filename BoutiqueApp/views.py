@@ -45,4 +45,32 @@ def listar_clientes(request):
         clientes = Cliente.objects.all()
     return render(request, 'BoutiqueApp/listar_clientes.html', {'clientes': clientes})
 
+# --- VER DETALLES DE LOS REGISTROS ---
+
+def detalle_catalogo(request, codigo):
+    catalogo = Catalogo.objects.get(codigo=codigo)
+    return render(request, 'BoutiqueApp/detalle_catalogo.html', {'catalogo': catalogo})
+
+# --- EDITAR LOS REGISTROS ---
+
+def editar_catalogo(request, codigo):
+    catalogo = Catalogo.objects.get(codigo=codigo)
+    if request.method == 'POST':
+        form = CatalogoForm(request.POST, instance=catalogo)
+        if form.is_valid():
+            form.save()
+            return redirect('listar_catalogo')
+    else:
+        form = CatalogoForm(instance=catalogo)
+    return render(request, 'BoutiqueApp/editar_catalogo.html', {'form': form})
+
+# --- ELIMINAR UN REGISTROS ---
+
+def eliminar_catalogo(request, codigo):
+    catalogo = Catalogo.objects.get(codigo=codigo)
+    if request.method == 'POST':
+        catalogo.delete()
+        return redirect('listar_catalogo')
+    return render(request, 'BoutiqueApp/eliminar_catalogo.html', {'catalogo': catalogo})
+
 

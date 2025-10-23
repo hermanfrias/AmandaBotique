@@ -3,35 +3,46 @@
 {% block Titulo %} <a class="navbar-brand" href="#">Listar Catalogo | Amanda Boutique</a> {% endblock %}
 
 {% block content %}
-<h2>Lista de Catálogo</h2>
-<form method="GET" action="{% url 'listar_catalogo' %}">
-    <input type="text" name="buscar" placeholder="Buscar por nombre" value="{{ request.GET.buscar }}">
-    <button type="submit">Buscar</button>
-</form>
-<table class="table table-striped table-pink">
-    <thead>
-        <tr>
-            <th>Código</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for catalogo in catalogos %}
-        <tr>
-            <td>{{ catalogo.codigo }}</td>
-            <td>{{ catalogo.nombre }}</td>
-            <td>{{ catalogo.descripcion }}</td>
-            <td>${{ catalogo.precio }}</td>
-        </tr>
-        {% empty %}
-        <tr>
-            <td colspan="4">No se encontraron artículos en el catálogo.</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Lista de Catálogo</h2>
+        <a href="{% url 'actualizar_catalogo' %}" class="btn btn-primary btn-sm btn-listar">Actualizar Catalogo</a>
+    </div>
+    <form method="GET" action="{% url 'listar_catalogo' %}">
+        <input type="text" name="buscar" placeholder="Buscar por nombre" value="{{ request.GET.buscar }}">
+        <button type="submit">Buscar</button>
+    </form>
+    <div class="ttable-responsive shadow-sm rounded">
+        <table class="table table-striped table-bordered align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for catalogo in catalogos %}
+                <tr>
+                    <td>{{ catalogo.codigo }}</td>
+                    <td>{{ catalogo.nombre }}</td>
+                    <td>{{ catalogo.descripcion }}</td>
+                    <td>${{ catalogo.precio }}</td>
+                    <td>
+                    <a href='{% url "detalle_catalogo" catalogo.codigo %}' class="btn btn-info btn-sm">Ver</a>
+                    <a href='{% url "editar_catalogo" catalogo.codigo %}' class="btn btn-warning btn-sm">Editar</a>
+                    <a href='{% url "eliminar_catalogo" catalogo.codigo %}' class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">No se encontraron artículos en el catálogo.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
 
 

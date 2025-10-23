@@ -1,0 +1,35 @@
+{% extends "BoutiqueApp/index.html" %}
+{% block content %}
+{% block eleminar_catalogo %}
+
+<body>
+
+<div class="container my-5">
+    <div class="card shadow mx-auto" style="max-width: 600px;">
+        <div class="card-header text-center">
+            ⚠️ Confirmar Eliminación
+        </div>
+        <div class="card-body text-center">
+            <h5>¿Estás seguro de que deseas eliminar el producto?</h5>
+            <p class="mt-3">
+                <strong>Código:</strong> <span>{{ catalogo.codigo }}</span><br>
+                <strong>Nombre:</strong> <span>{{ catalogo.nombre }}</span><br>
+                <strong>Precio:</strong> <span>${{ catalogo.precio }}</span>
+            </p>
+
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger px-4 me-2">Sí, eliminar</button>
+                <a href="{% url 'listar_catalogo' %}" class="btn btn-secondary px-4">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+{% endblock eleminar_catalogo %}
+{% endblock content %}
+
