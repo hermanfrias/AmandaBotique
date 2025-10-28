@@ -32,8 +32,8 @@
 
                 <!-- Acciones -->
                 <div class="mt-4">
-                    <a href="{% url 'listar_catalogo' %}" class="btn btn-outline-secondary">Volver</a>
-                    <a href="#" class="btn btn-rosa">Agregar al carrito</a>
+                    <a href="{% url 'listar_catalogo' %}" class="btn btn-admin">Volver</a>
+                    <a href="{% url 'editar_catalogo' catalogo.codigo %}" class="btn btn-admin">Editar Catalogo</a>
                 </div>
             </div>
         </div>
