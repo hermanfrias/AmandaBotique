@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Cliente, Catalogo
+from LoginApp.models import PerfilUsuario
 
 # Register your models here.
 
@@ -16,6 +17,13 @@ class CatalogoAdmin(admin.ModelAdmin):
     search_fields = ('nombre',)
     list_filter = ('precio',)
     ordering = ('nombre',)
+    
+@admin.register(PerfilUsuario)
+class CatalogoAdmin(admin.ModelAdmin):
+    list_display = ('username', 'first_name', 'last_name')
+    search_fields = ('username',)
+    list_filter = ('last_name',)
+    ordering = ('username',)
 
 # Personalización del título y encabezado del admin
 admin.site.site_header = "Administración de Amanda Boutique"

@@ -1,0 +1,54 @@
+{% extends "BoutiqueApp/index.html" %}
+{% block Titulo %} <a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique</a> {% endblock %}
+{% block content %}
+<div class="container my-5">
+  <div class="card shadow-sm p-4 mx-auto" style="max-width: 700px; background-color: #fff0f7; border-radius: 20px;">
+    <h2 class="text-center mb-4" style="color: #b76e79;">Editar Perfil</h2>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Nombre</label>
+          {{ form.first_name }}
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Apellido</label>
+          {{ form.last_name }}
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Ciudad</label>
+          {{ form.ciudad }}
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">País</label>
+          {{ form.pais }}
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Teléfono</label>
+          {{ form.telefono }}
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Fecha de Nacimiento</label>
+          {{ form.fecha_nacimiento }}
+        </div>
+        <div class="col-md-12">
+          <label class="form-label">Avatar</label><br>
+          {{ form.avatar }}
+        </div>
+        <div class="col-md-12">
+          <label class="form-label">Nombre de usuario</label>
+          {{ form.username }}
+        </div>
+        <div class="col-md-12">
+          <label class="form-label">Contraseña (solo lectura)</label>
+          {{ form.password }}
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-pink px-4">Guardar Cambios</button>
+        <a href="{% url 'perfil' %}" class="btn btn-secondary ms-2">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

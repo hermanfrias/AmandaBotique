@@ -2,10 +2,11 @@ from ProveedoresApp.forms import ProveedorForm
 from ProveedoresApp.models import Proveedores
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
-class ProveedoresListView(ListView):
+class ProveedoresListView(LoginRequiredMixin, ListView):
     model = Proveedores
     template_name = 'ProveedoresApp/proveedores_list.html'
     context_object_name = 'proveedores'
@@ -16,28 +17,28 @@ class ProveedoresListView(ListView):
             return Proveedores.objects.filter(nombre__icontains=query)
         return Proveedores.objects.all()
 
-class ProveedoresCreateView(CreateView):
+class ProveedoresCreateView(LoginRequiredMixin, CreateView):
     model = Proveedores
     form_class = ProveedorForm
     template_name = 'ProveedoresApp/proveedores_create.html'
     success_url = reverse_lazy('proveedores_list')  
-    
-class ProveedoresUpdateView(UpdateView):
+
+class ProveedoresUpdateView(LoginRequiredMixin, UpdateView):
     model = Proveedores
     form_class = ProveedorForm
     template_name = 'ProveedoresApp/proveedores_update.html'
     success_url = reverse_lazy('proveedores_list')
     slug_field = "codigo_proveedor"
     slug_url_kwarg = "codigo_proveedor"
-    
-class ProveedoresDeleteView(DeleteView):
+
+class ProveedoresDeleteView(LoginRequiredMixin, DeleteView):
     model = Proveedores
     template_name = 'ProveedoresApp/proveedores_confirm_delete.html'
     success_url = reverse_lazy('proveedores_list')
     slug_field = "codigo_proveedor"
     slug_url_kwarg = "codigo_proveedor"
     
-class ProveedoresDetailView(DetailView):
+class ProveedoresDetailView(LoginRequiredMixin, DetailView):
     model = Proveedores
     template_name = "ProveedoresApp/proveedores_detail.html"
     context_object_name = "proveedores"

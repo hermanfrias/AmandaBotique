@@ -1,0 +1,32 @@
+{% extends "BoutiqueApp/index.html" %}
+{% block Titulo %} <a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique</a> {% endblock %}
+{% block content %}
+<div class="container my-5">
+  <div class="card shadow-sm p-4 mx-auto" style="max-width: 700px; background-color: #fff0f7; border-radius: 20px;">
+    <div class="text-center">
+      {% if user.avatar %}
+        <img src="{{ user.avatar.url }}" alt="Avatar" class="rounded-circle mb-3" width="120" height="120">
+      {% else %}
+        <img src="/media/default/default_icono.png" alt="Avatar" class="rounded-circle mb-3" width="120" height="120">
+      {% endif %}
+      <h2 style="color: #b76e79;">{{ user.first_name }} {{ user.last_name }}</h2>
+      <p class="text-muted">@{{ user.username }}</p>
+    </div>
+    <hr>
+    <div class="mt-3">
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Ciudad:</strong> {{ user.ciudad|default:"No especificado" }}</p>
+      <p><strong>País:</strong> {{ user.pais|default:"No especificado" }}</p>
+      <p><strong>Teléfono:</strong> {{ user.telefono|default:"No especificado" }}</p>
+      <p><strong>Fecha de Nacimiento:</strong> {{ user.fecha_nacimiento|date:"d/m/Y" }}</p>
+    </div>
+    <div class="text-center mt-4">
+      <a href="{% url 'editar_perfil' %}" class="btn btn-pink">Editar Perfil</a>
+      <form method="POST" action="{% url 'logout' %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-secondary ms-2">Cerrar Sesión</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
