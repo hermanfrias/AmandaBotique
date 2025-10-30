@@ -24,7 +24,7 @@
       <a href="{% url 'editar_perfil' %}" class="btn btn-pink">Editar Perfil</a>
       <form method="POST" action="{% url 'logout' %}" style="display:inline;">
         {% csrf_token %}
-        <button type="submit" class="btn btn-secondary ms-2">Cerrar Sesión</button>
+        <button type="submit" class="btn btn-pink">Cerrar Sesión</button>
       </form>
     </div>
   </div>

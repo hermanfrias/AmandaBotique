@@ -1,15 +1,8 @@
 from django.contrib import admin
-from .models import Cliente, Catalogo
+from .models import Catalogo
 from LoginApp.models import PerfilUsuario
 
 # Register your models here.
-
-@admin.register(Cliente)
-class ClienteAdmin(admin.ModelAdmin):
-    list_display = ('identificacion', 'nombre', 'apellido', 'email', 'telefono', 'fecha_creacion')
-    search_fields = ('apellido', 'identificacion', 'email')
-    list_filter = ('apellido', 'identificacion')
-    ordering = ('nombre',)
 
 @admin.register(Catalogo)
 class CatalogoAdmin(admin.ModelAdmin):

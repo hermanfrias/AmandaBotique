@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'BoutiqueApp',
     'ProveedoresApp',    
     'LoginApp',
+    'ClientesApp',
 ]
 
 MIDDLEWARE = [
