@@ -12,24 +12,24 @@ Instrucciones:
 • Ir al disco y directorio donde se quiere crear el proyecto
 
 • Clonar el repositorio de GitHub en la carpeta:
-    o git clone https://github.com/hermanfrias/AmandaBoutique.git
+git clone https://github.com/hermanfrias/AmandaBoutique.git
 
 • En la carpeta AmandaBoutique crear el ambiente virtual y activarlo:
-    o python -m venv .venv .
-    o .venv/Scripts/Activate
+python -m venv .venv .
+venv/Scripts/Activate
 
 • Instalar las librerias que se encuentran en requirements.txt:
-    o pip install -r requirements.txt
+pip install -r requirements.txt
 
 • Instalar las base de datos o modelos:
-    o py manage.py makemigrations
-    o py manage.py migrate 
+py manage.py makemigrations
+py manage.py migrate 
 
 • Levantar el servidor virtual:
-    o python manage.py runserver
+python manage.py runserver
 
 • Abrir el navegardor y colorar ests dirección:
-    o http://127.0.0.1:8000/ o http://localhost:8000/
+http://127.0.0.1:8000/ o http://localhost:8000/
 
 • Uso:
     o El botón de Inicio del navbar siempre llevara a la página de inicio.
