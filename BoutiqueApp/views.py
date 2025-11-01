@@ -8,7 +8,7 @@ def index(request):
 
 def actualizar_catalogo(request):
     if request.method == 'POST':
-        form = CatalogoForm(request.POST)
+        form = CatalogoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect("actualizar_catalogo")
@@ -41,7 +41,7 @@ def detalle_catalogo(request, codigo):
 def editar_catalogo(request, codigo):
     catalogo = Catalogo.objects.get(codigo=codigo)
     if request.method == 'POST':
-        form = CatalogoForm(request.POST, instance=catalogo)
+        form = CatalogoForm(request.POST, request.FILES, instance=catalogo )
         if form.is_valid():
             form.save()
             return redirect('listar_catalogo')

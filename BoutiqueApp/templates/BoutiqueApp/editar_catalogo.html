@@ -1,52 +1,110 @@
 {% extends "BoutiqueApp/index.html" %}
-{% block Titulo %} <a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique</a> {% endblock %}
+
+{% block Titulo %}
+<a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique</a>
+{% endblock %}
+
 {% block content %}
-{% block editar_catalogo %}    
+{% block editar_catalogo %}
 
 <body>
 
 <div class="container my-5">
-    <div class="card shadow mx-auto" style="max-width: 600px;">
-        <div class="card-header text-center">
-            ✨ Editar Catálogo ✨
+    <div class="card shadow-lg mx-auto border-0 rounded-4" style="max-width: 700px; background-color: #fff5fa;">
+        <div class="card-header text-center fw-bold text-pink fs-4" style="background-color: #ffe6f2;">
+            Editar Catálogo
         </div>
-        <div class="card-body">
-            <form method="POST">
+
+        <div class="card-body p-4">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 <!-- Campo Código -->
                 <div class="mb-3">
-                    <label for="id_codigo" class="form-label">Código</label>
+                    <label for="id_codigo" class="form-label fw-semibold">Código</label>
                     {{ form.codigo }}
                 </div>
 
                 <!-- Campo Nombre -->
                 <div class="mb-3">
-                    <label for="id_nombre" class="form-label">Nombre del Producto</label>
+                    <label for="id_nombre" class="form-label fw-semibold">Nombre del Producto</label>
                     {{ form.nombre }}
                 </div>
 
                 <!-- Campo Descripción -->
                 <div class="mb-3">
-                    <label for="id_descripcion" class="form-label">Descripción</label>
+                    <label for="id_descripcion" class="form-label fw-semibold">Descripción</label>
                     {{ form.descripcion }}
                 </div>
 
                 <!-- Campo Precio -->
                 <div class="mb-3">
-                    <label for="id_precio" class="form-label">Precio (USD)</label>
+                    <label for="id_precio" class="form-label fw-semibold">Precio (USD)</label>
                     {{ form.precio }}
                 </div>
 
+                <!-- Campo Imagen -->
+                <div class="mb-3">
+                    <label for="id_imagen_modelo" class="form-label fw-semibold">Imagen del Modelo</label>
+                    {{ form.imagen_modelo }}
+
+                    <!-- Imagen actual -->
+                    {% if form.instance.imagen_modelo %}
+                    <div class="text-center mt-3">
+                        <p class="text-muted">Imagen actual:</p>
+                        <img id="imagen-actual"
+                            src="{{ form.instance.imagen_modelo.url }}"
+                            alt="Imagen actual"
+                            class="img-fluid rounded-4 shadow-sm border border-light"
+                            style="max-height: 250px;">
+                    </div>
+                    {% endif %}
+
+                    <!-- Vista previa nueva -->
+                    <div class="text-center mt-3 d-none" id="preview-container">
+                        <p class="text-muted">Vista previa nueva:</p>
+                        <img id="preview-imagen"
+                    class="img-fluid rounded-4 shadow-sm border border-light"
+                    style="max-height: 250px;" />
+                    </div>
+                </div>
+
                 <!-- Botones -->
-                <div class="text-center">
-                    <button type="submit" class="btn btn-admin">Guardar Cambios</button>
-                    <a href="{% url 'listar_catalogo' %}" class="btn btn-admin">Cancelar</a>
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn text-white px-4 py-2 me-2"
+                            style="background-color: #e83e8c; border-radius: 20px;">
+                        Guardar Cambios
+                    </button>
+                    <a href="{% url 'listar_catalogo' %}"
+                        class="btn text-white px-4 py-2"
+                        style="background-color: #ffb6c1; border-radius: 20px;">
+                        Cancelar
+                    </a>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<!-- 🪄 Script para vista previa de imagen -->
+<script>
+document.getElementById("id_imagen_modelo").addEventListener("change", function(event) {
+    const archivo = event.target.files[0];
+    const previewContainer = document.getElementById("preview-container");
+    const previewImagen = document.getElementById("preview-imagen");
+
+    if (archivo) {
+        const lector = new FileReader();
+        lector.onload = function(e) {
+            previewImagen.src = e.target.result;
+            previewContainer.classList.remove("d-none");
+        }
+        lector.readAsDataURL(archivo);
+    } else {
+        previewContainer.classList.add("d-none");
+    }
+});
+</script>
 
 </body>
 </html>

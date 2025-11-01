@@ -1,23 +1,96 @@
 {% extends "BoutiqueApp/index.html" %}
 
-{% block Titulo %} <a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique</a> {% endblock %}
+{% block Titulo %}
+<a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique</a>
+{% endblock %}
 
 {% block content %}
 
-
 <div class="container my-5">
-    <h2 class="mb-4 text-center">Actualizar Catalogo</h2>
+    <h2 class="mb-4 text-center text-pink fw-bold">Actualizar Catálogo</h2>
     
-    <div class="card shadow-sm p-4 mx-auto" style="max-width: 600px;">
+    <div class="card shadow-lg p-4 mx-auto border-0 rounded-4" style="max-width: 700px; background-color: #fff5fa;">
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form.as_p }}
-            <div class= "text-center mt-3">
-                <button type="submit" class="btn btn-admin">Guardar</button>
-                <a href="{% url 'listar_catalogo' %}" class="btn btn-admin">Volver</a>
+
+            <div class="mb-3">
+                {{ form.codigo.label_tag }}
+                {{ form.codigo }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.nombre.label_tag }}
+                {{ form.nombre }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.descripcion.label_tag }}
+                {{ form.descripcion }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.precio.label_tag }}
+                {{ form.precio }}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_imagen_modelo" class="form-label fw-bold">Imagen del modelo</label>
+                {{ form.imagen_modelo }}
+
+                <!-- Imagen actual -->
+                {% if form.instance.imagen_modelo %}
+                <div class="text-center mt-3">
+                    <p class="text-muted">Imagen actual:</p>
+                    <img id="imagen-actual" 
+                        src="{{ form.instance.imagen_modelo.url }}" 
+                        alt="Imagen actual" 
+                        class="img-fluid rounded-4 shadow-sm border border-light"
+                        style="max-height: 250px;">
+                </div>
+                {% endif %}
+
+                <!-- Vista previa nueva -->
+                <div class="text-center mt-3 d-none" id="preview-container">
+                    <p class="text-muted">Vista previa nueva:</p>
+                    <img id="preview-imagen" 
+                         class="img-fluid rounded-4 shadow-sm border border-light"
+                         style="max-height: 250px;" />
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn px-4 py-2 text-white" 
+                    style="background-color: #e83e8c; border-radius: 20px;">
+                    Guardar
+                </button>
+                <a href="{% url 'listar_catalogo' %}" 
+                    class="btn px-4 py-2 ms-2" 
+                    style="background-color: #ffb6c1; border-radius: 20px; color: #fff;">
+                    Volver
+                </a>
             </div>
         </form>
     </div>
 </div>
+
+<!-- 🪄 Script para vista previa -->
+<script>
+document.getElementById("id_imagen_modelo").addEventListener("change", function(event) {
+    const archivo = event.target.files[0];
+    const previewContainer = document.getElementById("preview-container");
+    const previewImagen = document.getElementById("preview-imagen");
+
+    if (archivo) {
+        const lector = new FileReader();
+        lector.onload = function(e) {
+            previewImagen.src = e.target.result;
+            previewContainer.classList.remove("d-none");
+        }
+        lector.readAsDataURL(archivo);
+    } else {
+        previewContainer.classList.add("d-none");
+    }
+});
+</script>
 
 {% endblock %}
