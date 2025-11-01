@@ -49,4 +49,6 @@ Instrucciones:
 • El video explicativo del proyecto lo puedene encontrar en:
     -- https://drive.google.com/file/d/1U6SMOO1pwpx70HiVOjLVgbK6tzPRcMLz/view?usp=sharing
 
+• Post data: se agego un campo de imagen en el modelo de Catalogo, para incluir fotos en el Catalogo , y no esta en el video explicativo.
+
 
