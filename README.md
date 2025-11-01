@@ -12,7 +12,7 @@ Instrucciones:
 • Ir al disco y directorio donde se quiere crear el proyecto
 
 • Clonar el repositorio de GitHub en la carpeta:
-    -- git clone https://github.com/hermanfrias/AmandaBoutique.git
+    -- git clone https://github.com/hermanfrias/AmandaBoutique.git .
 
 • En la carpeta AmandaBoutique crear el ambiente virtual y activarlo:
     -- python -m venv .venv .
