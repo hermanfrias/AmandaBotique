@@ -16,7 +16,7 @@ Instrucciones:
 
 • En la carpeta AmandaBoutique crear el ambiente virtual y activarlo:
     -- python -m venv .venv .
-    -- venv/Scripts/Activate
+    -- .venv/Scripts/Activate
 
 • Instalar las librerias que se encuentran en requirements.txt:
     -- pip install -r requirements.txt
