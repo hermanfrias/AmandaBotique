@@ -47,6 +47,6 @@ Instrucciones:
 • Las views de las bases de datos de Catalogo y PerfilUsuario fueron creadas como funciones y las bases de datos de Clientes y Proveedores como clases.
 
 • El video explicativo del proyecto lo puedene encontrar en:
-    --
+    -- https://drive.google.com/file/d/1U6SMOO1pwpx70HiVOjLVgbK6tzPRcMLz/view?usp=sharing
 
 
