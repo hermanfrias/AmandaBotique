@@ -18,6 +18,7 @@ class FormularioCambioUsuario(UserChangeForm):
             "ciudad": forms.TextInput(attrs={"class": "form-control", "placeholder": "Ciudad"}),
             "first_name": forms.TextInput(attrs={"class": "form-control", "placeholder": "Nombre"}),
             "last_name": forms.TextInput(attrs={"class": "form-control", "placeholder": "Apellido"}),
+            "email": forms.EmailInput(attrs={"class": "form-control", "placeholder": "Email"}),
             "fecha_nacimiento": forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             "username": forms.TextInput(attrs={"class": "form-control", "placeholder": "Nombre de usuario"}),
             "password": forms.PasswordInput(attrs={"class": "form-control", "readonly": "readonly"}),

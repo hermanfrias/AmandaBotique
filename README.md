@@ -28,6 +28,9 @@ Instrucciones:
 • Levantar el servidor virtual:
     -- python manage.py runserver
 
+• Crear superusuarion para la administracion de Django de las bases de dato
+    --py manage.py createsuperuser
+
 • Abrir el navegardor y colorar ests dirección:
     -- http://127.0.0.1:8000/ o http://localhost:8000/
 

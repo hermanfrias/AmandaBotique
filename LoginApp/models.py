@@ -7,6 +7,7 @@ def cargar_avatar(instance, filename):
 
 class PerfilUsuario(AbstractUser):
     avatar = models.ImageField(upload_to = cargar_avatar, default = "default/default_icono.png", null=True, blank=True, verbose_name = "Avatar")
+    email = models.EmailField(unique=True)
     ciudad = models.CharField(max_length=100, null=True, blank=True)
     pais = models.CharField(max_length=100, null=True, blank=True)
     telefono = models.CharField(max_length=20, null=True, blank=True)
