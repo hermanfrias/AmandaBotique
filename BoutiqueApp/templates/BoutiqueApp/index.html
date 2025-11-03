@@ -179,7 +179,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a {% block Titulo %}class="navbar-brand" href="#">Inicio | Amanda Boutique {% endblock %}</a>
+      {% block Titulo %} <a class="navbar-brand" href="#">Inicio | Amanda Boutique </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -203,6 +203,7 @@
           {% endif %}
         </ul>
       </div>
+      {% endblock %}
     </div>
   </nav>
   {% block content %}

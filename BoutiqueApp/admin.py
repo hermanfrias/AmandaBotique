@@ -6,10 +6,10 @@ from LoginApp.models import PerfilUsuario
 
 @admin.register(Catalogo)
 class CatalogoAdmin(admin.ModelAdmin):
-    list_display = ('codigo', 'nombre', 'descripcion', 'precio')
-    search_fields = ('nombre',)
+    list_display = ('codigo', 'modelo', 'estilo', 'descripcion', 'precio')
+    search_fields = ('modelo',)
     list_filter = ('precio',)
-    ordering = ('nombre',)
+    ordering = ('modelo',)
     
 @admin.register(PerfilUsuario)
 class CatalogoAdmin(admin.ModelAdmin):
