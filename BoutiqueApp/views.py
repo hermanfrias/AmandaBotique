@@ -4,7 +4,8 @@ from BoutiqueApp.models import Catalogo
 from django.contrib.auth.decorators import login_required
 
 def index(request):
-    return render(request, "BoutiqueApp/index.html")
+    catalogos = Catalogo.objects.all()
+    return render(request, 'BoutiqueApp/index.html', {'catalogos': catalogos})
 
 def actualizar_catalogo(request):
     if request.method == 'POST':

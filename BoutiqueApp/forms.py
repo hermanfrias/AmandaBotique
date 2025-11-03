@@ -7,7 +7,7 @@ class CatalogoForm(forms.ModelForm):
         fields = ['codigo','modelo', 'estilo', 'descripcion', 'precio', 'imagen_modelo']
         widgets = {
             "codigo": forms.TextInput(attrs={'class':'form-control'}),
-            "nodelo": forms.TextInput(attrs={'class':'form-control'}),
+            "modelo": forms.TextInput(attrs={'class':'form-control'}),
             "estilo": forms.TextInput(attrs={'class':'form-control'}),
             "descripcion": forms.TextInput(attrs={'class':'form-control'}),
             "precio": forms.NumberInput(attrs={'class':'form-control'}),
