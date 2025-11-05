@@ -1,70 +1,81 @@
 {% extends "BoutiqueApp/index.html" %}
 
-{% block Titulo %} <a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="menu">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="#admin">Admin</a></li>
-            {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'perfil' %}">Login</a></li>
-                <li class="nav-item">
-                    <form action="{% url 'logout' %}" method="POST" style="display: inline;">
+{% block Titulo %}
+<a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-end" id="menu">
+    <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#admin">Admin</a></li>
+        {% if user.is_authenticated %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'perfil' %}">Perfil</a></li>
+            <li class="nav-item">
+                <form action="{% url 'logout' %}" method="POST" class="d-inline">
                     {% csrf_token %}
-                    <button type="submit" class="nav-item nav-link">Logout</button>
-                    </form>
-                </li>
-            {% else %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'registrar' %}">Registrarse</a></li>
-            {% endif %}
-        </ul>
-    </div>
+                    <button type="submit" class="btn-logout">Logout</button>
+                </form>
+            </li>
+        {% else %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'registrar' %}">Registrarse</a></li>
+        {% endif %}
+    </ul>
+</div>
 {% endblock %}
+
 {% block content %}
+<div class="container py-5">
+    <!-- Encabezado -->
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="fw-bold">Lista de Clientes</h2>
-        <a href="{% url 'clientes_create' %}" class="btn btn-primary btn-sm btn-listar">Agregar Cliente</a>
+        <h2 class="text-pink fw-bold">Lista de Clientes</h2>
+        <a href="{% url 'clientes_create' %}" class="btn btn-listar">Agregar Cliente</a>
     </div>
-    <form method="GET" action="{% url 'clientes_list' %}">
-        <input type="text" name="buscar" placeholder="Buscar por nombre" value="{{ request.GET.buscar }}">
-        <button type="submit">Buscar</button>
+
+    <!-- Búsqueda -->
+    <form method="GET" action="{% url 'clientes_list' %}" class="d-flex mb-4 gap-2">
+        <input type="text" name="buscar" class="form-control form-control-sm" placeholder="Buscar por nombre..." value="{{ request.GET.buscar }}">
+        <button type="submit" class="btn btn-pink btn-sm">Buscar</button>
     </form>
-    <div class="ttable-responsive shadow-sm rounded">
-        <table class="table table-striped table-bordered align-middle">
+
+    <!-- Tabla -->
+    <div class="table-responsive shadow-sm rounded">
+        <table class="table table-striped table-bordered align-middle table-sm text-center" style="table-layout: auto; width: 100%;">
             <thead class="table-dark">
-                <tr>    
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Dirección</th>
-                    <th>Teléfono</th>
-                    <th>Correo Electrónico</th>
-                    <th>Acciones</th>
+                <tr>
+                    <th class="p-1">Id</th>
+                    <th class="p-1">Nombre</th>
+                    <th class="p-1">Apellido</th>
+                    <th class="p-1">Dirección</th>
+                    <th class="p-1">Teléfono</th>
+                    <th class="p-1">Correo</th>
+                    <th class="p-1">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 {% for cliente in clientes %}
                 <tr>
-                    <td>{{ cliente.identificacion }}</td>
-                    <td>{{ cliente.nombre }}</td>
-                    <td>{{ cliente.apellido }}</td>
-                    <td>{{ cliente.direccion }}</td>
-                    <td>{{ cliente.telefono }}</td>
-                    <td>{{ cliente.email }}</td>
-                    <td>
-                        <a href='{% url "clientes_detail" cliente.identificacion %}' class="btn btn-info btn-sm">Ver</a>
-                        <a href='{% url "clientes_update" cliente.identificacion %}' class="btn btn-warning btn-sm">Editar</a>
-                        <a href='{% url "clientes_confirm_delete" cliente.identificacion %}' class="btn btn-danger btn-sm">Eliminar</a>
+                    <td class="p-1">{{ cliente.identificacion }}</td>
+                    <td class="p-1">{{ cliente.nombre }}</td>
+                    <td class="p-1">{{ cliente.apellido }}</td>
+                    <td class="p-1" style="white-space: normal;">{{ cliente.direccion }}</td>
+                    <td class="p-1">{{ cliente.telefono }}</td>
+                    <td class="p-1" style="white-space: normal;">{{ cliente.email }}</td>
+                    <td class="p-1">
+                        <div class="d-flex justify-content-center gap-1 flex-wrap">
+                            <a href="{% url 'clientes_detail' cliente.identificacion %}" class="btn btn-ver btn-sm">Ver</a>
+                            <a href="{% url 'clientes_update' cliente.identificacion %}" class="btn btn-editar btn-sm">Editar</a>
+                            <a href="{% url 'clientes_confirm_delete' cliente.identificacion %}" class="btn btn-eliminar btn-sm">Eliminar</a>
+                        </div>
                     </td>
                 </tr>
-                    {% empty %}
+                {% empty %}
                 <tr>
-                    <td colspan="6" class="text-center">No se encontraron clientes.</td>
+                    <td colspan="7" class="text-center text-muted py-3">No se encontraron clientes.</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
-{% endblock content %}
+</div>
+{% endblock %}

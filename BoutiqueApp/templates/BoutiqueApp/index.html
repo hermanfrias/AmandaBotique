@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Amanda Boutique | Showroom de Vestidos de Quinceañera </title>
+  <title>Amanda Boutique | Showroom de Vestidos de Quinceañera</title>
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,8 +12,115 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- Estilos personalizados -->
+  <!-- 🎀 Estilos personalizados unificados -->
   <style>
+     /* 🔹 Botón de logout coherente */
+  .btn-logout {
+    background: none;
+    border: none;
+    color: #7b3f61 !important;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  .btn-logout:hover {
+    color: #b76e79 !important;
+    text-decoration: underline;
+    transform: translateY(-1px);
+  }
+
+  /* 🔹 Alinea los elementos del navbar */
+  .navbar .nav-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 8px 12px;
+    color: #7b3f61 !important;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #b76e79 !important;
+  }
+
+  /* 🔸 Botones de acción (alineados en una línea) */
+  .acciones-cell {
+    white-space: nowrap;
+  }
+  .acciones-cell .btn {
+    display: inline-block;
+    margin: 0 4px;
+    vertical-align: middle;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+  }
+
+  /* Botones personalizados */
+  .btn-volver {
+    background-color: #ffb6c1;
+    color: white;
+  }
+  .btn-volver:hover {
+    background-color: #ff8fa3;
+  }
+
+  .btn-editar {
+    background-color: #e83e8c;
+    color: white;
+  }
+  .btn-editar:hover {
+    background-color: #c92a76;
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .acciones-cell {
+      white-space: normal;
+    }
+    .acciones-cell .btn {
+      display: block;
+      width: 100%;
+      margin: 6px 0;
+    }
+  }
+    /* 🔹 Mantiene los botones de acción alineados horizontalmente */
+  .acciones-cell {
+    white-space: nowrap; /* evita que los botones salten de línea */
+  }
+
+  .acciones-cell .btn {
+    display: inline-block;
+    margin: 0 3px;
+    vertical-align: middle;
+  }
+
+  /* 🔸 Tamaño y espaciado refinado */
+  .acciones-cell .btn-sm {
+    padding: 6px 10px;
+    font-size: 0.88rem;
+    border-radius: 8px;
+  }
+
+  /* 🔸 Hover suave */
+  .acciones-cell .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  /* 🔹 Ajuste responsive */
+  @media (max-width: 768px) {
+    .acciones-cell {
+      white-space: normal;
+    }
+    .acciones-cell .btn {
+      display: block;
+      width: 100%;
+      margin: 4px 0;
+    }
+  }
+    /* =======================
+       🌸 BASE GENERAL
+    ======================== */
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #fff7fb;
@@ -26,6 +133,11 @@
       color: #b76e79;
     }
 
+    .text-pink { color: #b76e79 !important; }
+
+    /* =======================
+       🌸 NAVBAR
+    ======================== */
     .navbar {
       background-color: #ffe6f2;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -40,19 +152,42 @@
     .nav-link {
       color: #7b3f61 !important;
       font-weight: 500;
+      padding: 8px 12px;
     }
 
-    .nav-link:hover {
+    .nav-link:hover { color: #b76e79 !important; }
+
+    .navbar .nav-item {
+      display: flex;
+      align-items: center;
+    }
+
+    /* 🔹 Botón Logout */
+    .btn-logout {
+      background: none;
+      border: none;
+      color: #7b3f61 !important;
+      font-weight: 500;
+      padding: 8px 12px;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-logout:hover {
       color: #b76e79 !important;
+      text-decoration: underline;
+      transform: translateY(-1px);
     }
 
+    /* =======================
+       🌸 HERO PRINCIPAL
+    ======================== */
     .hero {
       background: linear-gradient(rgba(183,110,121,0.4), rgba(183,110,121,0.4)),
         url('https://images.unsplash.com/photo-1604709177225-055f4b237b09?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: white;
       height: 90vh;
       display: flex;
-      align-catalogos: center;
+      align-items: center;
       justify-content: center;
       text-align: center;
       padding: 0 20px;
@@ -64,22 +199,31 @@
       text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
     }
 
-    .btn-pink {
-      background-color: #e6b2c6;
+    /* =======================
+       🌸 BOTONES PERSONALIZADOS
+    ======================== */
+    .btn-pink, .btn-buscar, .btn-listar, .btn-ver, .btn-editar, .btn-eliminar {
       color: white;
       border: none;
-      border-radius: 30px;
-      padding: 12px 30px;
-      font-weight: 500;
+      border-radius: 8px;
       transition: all 0.3s ease;
     }
 
-    .btn-pink:hover {
+    .btn-pink, .btn-buscar, .btn-listar, .btn-ver { background-color: #e6b2c6; }
+    .btn-editar { background-color: #b76e79; }
+    .btn-eliminar { background-color: #f28ca3; }
+
+    .btn-pink:hover, .btn-buscar:hover, .btn-listar:hover, .btn-ver:hover {
       background-color: #d48ba0;
-      color: #fff;
       transform: translateY(-2px);
     }
 
+    .btn-editar:hover { background-color: #8c4a56; transform: translateY(-2px); }
+    .btn-eliminar:hover { background-color: #e66780; transform: translateY(-2px); }
+
+    /* =======================
+       🌸 SHOWROOM / CATÁLOGO
+    ======================== */
     .catalogo {
       padding: 80px 0;
     }
@@ -89,73 +233,39 @@
       transition: transform 0.3s ease;
     }
 
-    .catalogo img:hover {
-      transform: scale(1.05);
-    }
+    .catalogo img:hover { transform: scale(1.05); }
 
-    .card {
-      border: none;
-    }
-
-    #acerca {
-      background-color: #fff0f7;
+    /* =======================
+       🌸 SECCIONES
+    ======================== */
+    #acerca, #contacto, #admin {
       padding: 80px 20px;
     }
 
-    #contacto {
-      padding: 80px 20px;
-      background-color: #fff7fb;
-    }
+    #acerca { background-color: #fff0f7; }
+    #contacto { background-color: #fff7fb; }
 
-    /* Sección Admin */
     #admin {
       background-color: #f9ecf3;
-      padding: 80px 20px;
       text-align: center;
       border-top: 2px solid #f5d0e0;
     }
 
-    #admin h2 {
-      color: #7b3f61;
-    }
-
-    .btn-admin {
-      background-color: #b76e79;
+    /* =======================
+       🌸 TABLAS
+    ======================== */
+    .table th {
+      background-color: #b76e79 !important;
       color: white;
-      border: none;
-      border-radius: 10px;
-      padding: 15px 25px;
-      margin: 10px;
-      font-weight: 500;
-      transition: all 0.3s ease;
     }
 
-    .btn-admin:hover {
-      background-color: #8c4a56;
-      transform: translateY(-2px);
+    .table td, .table th {
+      vertical-align: middle;
     }
 
-    .btn-listar {
-      background-color: #e6b2c6;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      padding: 15px 25px;
-      margin: 10px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .btn-listar:hover {
-      background-color: #d48ba0;
-      transform: translateY(-3px);
-      color: #fff;
-    }
-
-    .table-pink {
-      background-color: #f8d7da;
-    }
-    
+    /* =======================
+       🌸 FOOTER
+    ======================== */
     footer {
       background-color: #ffe6f2;
       color: #7b3f61;
@@ -169,140 +279,131 @@
       text-decoration: none;
     }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
-<body>
 
-  <!-- Navbar -->
+<body>
+  <!-- 🌸 NAVBAR -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      {% block Titulo %} <a class="navbar-brand" href="#">Inicio | Amanda Boutique </a>
+      {% block Titulo %}
+      <a class="navbar-brand" href="#">Inicio | Amanda Boutique</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse justify-content-end" id="menu">
-        <ul class="navbar-nav">
-          <li class="nav-catalogo"><a class="nav-link" href="#catalogo">Catálogo</a></li>
-          <li class="nav-catalogo"><a class="nav-link" href="#acerca">Sobre Amanda</a></li>
-          <li class="nav-catalogo"><a class="nav-link" href="#contacto">Contacto</a></li>
-          <li class="nav-catalogo"><a class="nav-link" href="#admin">Admin</a></li>
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#acerca">Sobre Amanda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="#admin">Admin</a></li>
+
           {% if user.is_authenticated %}
-            <li class="nav-catalogo"><a class="nav-link" href="{% url 'perfil' %}">Login</a></li>
-            <li class="nav-catalogo">
-              <form action="{% url 'logout' %}" method="POST" style="display: inline;">
+            <li class="nav-item"><a class="nav-link" href="{% url 'perfil' %}">Perfil</a></li>
+            <li class="nav-item">
+              <form action="{% url 'logout' %}" method="POST" class="d-inline">
                 {% csrf_token %}
-                <button type="submit" class="nav-catalogo nav-link">Logout</button>
+                <button type="submit" class="btn-logout">Logout</button>
               </form>
             </li>
           {% else %}
-            <li class="nav-catalogo"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-            <li class="nav-catalogo"><a class="nav-link" href="{% url 'registrar' %}">Registrarse</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'registrar' %}">Registrarse</a></li>
           {% endif %}
         </ul>
       </div>
       {% endblock %}
     </div>
   </nav>
+
   {% block content %}
-  <!-- Hero -->
+  <!-- 🌸 HERO -->
   <section id="inicio" class="hero">
     <div>
       <h1>Diseños de Ensueño para tus Quince Años</h1>
       <p class="lead mt-3 mb-4">Exclusividad, elegancia y estilo en cada detalle</p>
-      <a href="#catalogo" class="btn btn-pink btn-lg">Ver Colección</a>
+      <a href="#catalogo" class="btn btn-pink btn-lg rounded-pill">Ver Colección</a>
     </div>
   </section>
 
-  
-  <!-- 🩰 SHOWROOM DINÁMICO -->
-    <section id="catalogo" class="catalogo py-5">
-      <div class="container">
-        <h2 class="text-center mb-5">✨ Showroom de Vestidos ✨</h2>
-
-        <div class="row g-4">
-          {% for catalogo in catalogos %}
-          <div class="col-md-4 col-sm-6">
-            <div class="card shadow-sm border-0 h-100">
-              <!-- Imagen del vestido -->
-              <img src="{{ catalogo.imagen_modelo.url }}" class="card-img-top img-fluid"
-                alt="{{ catalogo.modelo }}" style="height: 400px; object-fit: cover; border-radius: 15px 15px 0 0;">
-              
-              <!-- Información del modelo -->
-              <div class="card-body text-center">
-                <h5 class="card-title">{{ catalogo.modelo }}</h5>
-                <p class="text-muted mb-2"><strong>Estilo:</strong> {{ catalogo.estilo }}</p>
-                <p class="card-text">{{ catalogo.descripcion|truncatechars:80 }}</p>
-                <p class="fw-bold text-pink fs-5">${{ catalogo.precio }}</p>
-
-              </div>
+  <!-- 🌸 SHOWROOM -->
+  <section id="catalogo" class="catalogo">
+    <div class="container">
+      <h2 class="text-center mb-5">✨ Showroom de Vestidos ✨</h2>
+      <div class="row g-4">
+        {% for catalogo in catalogos %}
+        <div class="col-md-4 col-sm-6">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="{{ catalogo.imagen_modelo.url }}" class="card-img-top img-fluid"
+                alt="{{ catalogo.modelo }}" style="height: 400px; object-fit: cover;">
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ catalogo.modelo }}</h5>
+              <p class="text-muted mb-2"><strong>Estilo:</strong> {{ catalogo.estilo }}</p>
+              <p class="card-text">{{ catalogo.descripcion|truncatechars:80 }}</p>
+              <p class="fw-bold fs-5">${{ catalogo.precio }}</p>
             </div>
           </div>
-          
-          {% endfor %}
         </div>
+        {% endfor %}
       </div>
-    </section>
-  <!-- Sobre Amanda -->
+    </div>
+  </section>
+
+  <!-- 🌸 SOBRE AMANDA -->
   <section id="acerca">
     <div class="container text-center">
       <h2>Sobre Amanda</h2>
       <p class="lead mt-3 mx-auto" style="max-width: 750px;">
-        En <strong>Amanda Boutique</strong>, cada vestido es una obra de arte confeccionada a medida.  
-        Inspirada en la feminidad, los sueños y la elegancia, Amanda combina texturas suaves, bordados delicados y cortes impecables 
+        En <strong>Amanda Boutique</strong>, cada vestido es una obra de arte confeccionada a medida.
+        Inspirada en la feminidad, los sueños y la elegancia, Amanda combina texturas suaves, bordados delicados y cortes impecables
         para crear diseños únicos que hacen de tus quince años una experiencia inolvidable.
-
+      </p>
       <h2>Sobre Herman Frias</h2>
       <p class="lead mt-3 mx-auto" style="max-width: 750px;">
-        <strong>Herman Frias</strong>, nacido en Caracas un 25 de agosto de 1963, "si tengo 63 años", estudie ciencias de la computación desde 1984 a 1988, al graduarme y conseguir mis primeros trabajos. Mi carrera profesional con sistemas fue en la área de soporte, redes, y telecomunicaciones. Hoy en día estoy jubilado, y como siempre me gusto la programación empecé a ver videos cursos de Java, Python y otros lenguajes. Este curso de CoderHouse me lo regalo mi hija en mi cumpleaños.
+        <strong>Herman Frias</strong>, nacido en Caracas un 25 de agosto de 1963. Estudié Ciencias de la Computación desde 1984 a 1988.
+        Trabajé en soporte, redes y telecomunicaciones. Hoy, jubilado, disfruto aprendiendo programación gracias al regalo de mi hija: este curso de CoderHouse.
       </p>
     </div>
   </section>
 
-  <!-- Contacto -->
+  <!-- 🌸 CONTACTO -->
   <section id="contacto" class="text-center">
     <div class="container">
       <h2>Contáctanos</h2>
       <p class="lead mt-3">Agenda tu cita o solicita un diseño personalizado.</p>
       <a href="mailto:contacto@amandaboutique.com" class="btn btn-pink mt-3">Enviar Correo</a>
       <div class="mt-4">
-        <p><strong>Dirección:</strong> Caracas, venezuela</p>
+        <p><strong>Dirección:</strong> Caracas, Venezuela</p>
         <p><strong>Teléfono:</strong> +58 (414) 3343333</p>
-        <p><strong>Email: amanda@gmail.com</strong>
+        <p><strong>Email:</strong> amanda@gmail.com</p>
         <p><strong>Horario:</strong> Lun-Vie 8:00 - 18:00</p>
-        <p><strong>Siguenos: </strong>
-          <a href="#" class="text-pink"><i class="bi bi-instagram"></i></a> | 
-          <a href="#" class="text-pink"><i class="bi bi-facebook"></i></a> | 
-          <a href="#" class="text-pink"><i class="bi bi-tiktok"></i></a>
+        <p><strong>Síguenos:</strong>
+          <a href="#"><i class="bi bi-instagram"></i></a> |
+          <a href="#"><i class="bi bi-facebook"></i></a> |
+          <a href="#"><i class="bi bi-tiktok"></i></a>
         </p>
       </div>
     </div>
   </section>
   {% endblock %}
-  
-  <!-- Sección Administrativa -->
+
+  <!-- 🌸 ADMIN -->
   <section id="admin">
     <div class="container">
       <h2>Panel de Administración</h2>
       <p class="lead mt-3 mb-4">Actualiza la información de tu base de datos con un solo clic</p>
-
-      <div>
-        <!-- 🧭 Nuevo botón de administración -->
-        <a href="/admin/" class="btn btn-listar">Administración</a>
-      <div>
-    <!-- BOTONES PARA LISTAR -->
-    <div class="mb-3">
-      <a href="{% url 'listar_catalogo' %}" class="btn btn-listar">📦 Catálogo</a>
-      <a href="{% url 'clientes_list' %}" class="btn btn-listar">👩‍🦰 Clientes</a>
-      <a href="{% url 'proveedores_list' %}" class="btn btn-listar">🚚 Proveedores</a>
-    </div>
+      <a href="/admin/" class="btn btn-listar">Administración</a>
+      <div class="mt-3">
+        <a href="{% url 'listar_catalogo' %}" class="btn btn-listar">📦 Catálogo</a>
+        <a href="{% url 'clientes_list' %}" class="btn btn-listar">👩‍🦰 Clientes</a>
+        <a href="{% url 'proveedores_list' %}" class="btn btn-listar">🚚 Proveedores</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- 🌸 FOOTER -->
   <footer>
     <p>© 2025 Amanda Boutique | Diseños de ensueño para tus quince años</p>
     <p><a href="#inicio">Volver arriba ↑</a></p>

@@ -1,55 +1,54 @@
 {% extends "BoutiqueApp/index.html" %}
 
-{% block Titulo %} <a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="menu">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="#admin">Admin</a></li>
-            {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'perfil' %}">Login</a></li>
-                <li class="nav-item">
-                    <form action="{% url 'logout' %}" method="POST" style="display: inline;">
+{% block Titulo %}
+<a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-end" id="menu">
+    <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#admin">Admin</a></li>
+        {% if user.is_authenticated %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'perfil' %}">Perfil</a></li>
+            <li class="nav-item">
+                <form action="{% url 'logout' %}" method="POST" class="d-inline">
                     {% csrf_token %}
-                    <button type="submit" class="nav-item nav-link">Logout</button>
-                    </form>
-                </li>
-            {% else %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'registrar' %}">Registrarse</a></li>
-            {% endif %}
-        </ul>
-    </div>
+                    <button type="submit" class="btn-logout">Logout</button>
+                </form>
+            </li>
+        {% else %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'registrar' %}">Registrarse</a></li>
+        {% endif %}
+    </ul>
+</div>
 {% endblock %}
 
 {% block content %}
-<div class="container my-5">
-    <div class="card shadow-lg p-4 mx-auto" style="max-width: 600px; border: 2px solid #F8C8DC; border-radius: 15px;">
+<div class="container py-5">
+    <div class="card shadow-lg mx-auto" 
+         style="max-width: 600px; border: 2px solid #F8C8DC; border-radius: 20px; background-color: #fff5fa;">
+        
         <div class="card-header text-center" 
-            style="background-color: #F8C8DC; color: #B76E79; font-size: 1.5rem; font-weight: bold;">
+             style="background-color: #F8C8DC; color: #B76E79; font-size: 1.5rem; font-weight: bold; border-radius: 18px 18px 0 0;">
             Confirmar Eliminación
         </div>
 
-        <div class="card-body text-center">
-            <p style="font-size: 1.2rem; color: #555;">
+        <div class="card-body text-center px-4 py-4">
+            <p class="fs-5 text-dark">
                 ¿Estás seguro que deseas eliminar al cliente:<br>
                 <strong style="color: #B76E79;">{{ clientes.nombre }} ({{ clientes.identificacion }})</strong>?
             </p>
 
-            <p class="text-muted">
+            <p class="text-muted mb-4">
                 Esta acción no se puede deshacer.
             </p>
 
-            <form method="POST">
+            <form method="POST" class="d-flex justify-content-center gap-3">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-danger">Sí, eliminar</button>
-                </button>
-                <a href="{% url 'clientes_list' %}" 
-                    class="btn"
-                    style="background-color: #F5B7C3; color: white; border-radius: 10px; padding: 10px 20px;">
-                    Cancelar
-                </a>
+                <button type="submit" class="btn btn-eliminar px-4 py-2">Sí, eliminar</button>
+
+                <a href="{% url 'clientes_list' %}" class="btn btn-volver px-4 py-2">Cancelar</a>
             </form>
         </div>
     </div>
