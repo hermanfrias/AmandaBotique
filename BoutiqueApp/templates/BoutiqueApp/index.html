@@ -4,17 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amanda Boutique | Showroom de Vestidos de Quinceañera</title>
-
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- 🎀 Estilos personalizados unificados -->
+  <!-- Estilos personalizados unificados -->
   <style>
-     /* 🔹 Botón de logout coherente */
   .btn-logout {
     background: none;
     border: none;
@@ -28,13 +24,10 @@
     text-decoration: underline;
     transform: translateY(-1px);
   }
-
-  /* 🔹 Alinea los elementos del navbar */
   .navbar .nav-item {
     display: flex;
     align-items: center;
   }
-
   .navbar-nav .nav-link {
     padding: 8px 12px;
     color: #7b3f61 !important;
@@ -42,8 +35,6 @@
   .navbar-nav .nav-link:hover {
     color: #b76e79 !important;
   }
-
-  /* 🔸 Botones de acción (alineados en una línea) */
   .acciones-cell {
     white-space: nowrap;
   }
@@ -54,7 +45,6 @@
     border-radius: 20px;
     transition: all 0.2s ease;
   }
-
   /* Botones personalizados */
   .btn-volver {
     background-color: #ffb6c1;
@@ -63,7 +53,6 @@
   .btn-volver:hover {
     background-color: #ff8fa3;
   }
-
   .btn-editar {
     background-color: #e83e8c;
     color: white;
@@ -71,7 +60,6 @@
   .btn-editar:hover {
     background-color: #c92a76;
   }
-
   /* Responsivo */
   @media (max-width: 768px) {
     .acciones-cell {
@@ -83,31 +71,23 @@
       margin: 6px 0;
     }
   }
-    /* 🔹 Mantiene los botones de acción alineados horizontalmente */
   .acciones-cell {
     white-space: nowrap; /* evita que los botones salten de línea */
   }
-
   .acciones-cell .btn {
     display: inline-block;
     margin: 0 3px;
     vertical-align: middle;
   }
-
-  /* 🔸 Tamaño y espaciado refinado */
   .acciones-cell .btn-sm {
     padding: 6px 10px;
     font-size: 0.88rem;
     border-radius: 8px;
   }
-
-  /* 🔸 Hover suave */
   .acciones-cell .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   }
-
-  /* 🔹 Ajuste responsive */
   @media (max-width: 768px) {
     .acciones-cell {
       white-space: normal;
@@ -118,51 +98,36 @@
       margin: 4px 0;
     }
   }
-    /* =======================
-       🌸 BASE GENERAL
-    ======================== */
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #fff7fb;
       color: #4a235a;
       scroll-behavior: smooth;
     }
-
     h1, h2, h3, h4, h5 {
       font-family: 'Playfair Display', serif;
       color: #b76e79;
     }
-
     .text-pink { color: #b76e79 !important; }
-
-    /* =======================
-       🌸 NAVBAR
-    ======================== */
     .navbar {
       background-color: #ffe6f2;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-
     .navbar-brand {
       font-family: 'Playfair Display', serif;
       font-size: 1.6rem;
       color: #b76e79 !important;
     }
-
     .nav-link {
       color: #7b3f61 !important;
       font-weight: 500;
       padding: 8px 12px;
     }
-
     .nav-link:hover { color: #b76e79 !important; }
-
     .navbar .nav-item {
       display: flex;
       align-items: center;
     }
-
-    /* 🔹 Botón Logout */
     .btn-logout {
       background: none;
       border: none;
@@ -171,16 +136,11 @@
       padding: 8px 12px;
       transition: color 0.3s ease, transform 0.3s ease;
     }
-
     .btn-logout:hover {
       color: #b76e79 !important;
       text-decoration: underline;
       transform: translateY(-1px);
     }
-
-    /* =======================
-       🌸 HERO PRINCIPAL
-    ======================== */
     .hero {
       background: linear-gradient(rgba(183,110,121,0.4), rgba(183,110,121,0.4)),
         url('https://images.unsplash.com/photo-1604709177225-055f4b237b09?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
@@ -192,80 +152,51 @@
       text-align: center;
       padding: 0 20px;
     }
-
     .hero h1 {
       font-size: 3.2rem;
       font-weight: 700;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
     }
-
-    /* =======================
-       🌸 BOTONES PERSONALIZADOS
-    ======================== */
     .btn-pink, .btn-buscar, .btn-listar, .btn-ver, .btn-editar, .btn-eliminar {
       color: white;
       border: none;
       border-radius: 8px;
       transition: all 0.3s ease;
     }
-
     .btn-pink, .btn-buscar, .btn-listar, .btn-ver { background-color: #e6b2c6; }
     .btn-editar { background-color: #b76e79; }
     .btn-eliminar { background-color: #f28ca3; }
-
     .btn-pink:hover, .btn-buscar:hover, .btn-listar:hover, .btn-ver:hover {
       background-color: #d48ba0;
       transform: translateY(-2px);
     }
-
     .btn-editar:hover { background-color: #8c4a56; transform: translateY(-2px); }
     .btn-eliminar:hover { background-color: #e66780; transform: translateY(-2px); }
-
-    /* =======================
-       🌸 SHOWROOM / CATÁLOGO
-    ======================== */
     .catalogo {
       padding: 80px 0;
     }
-
     .catalogo img {
       border-radius: 15px;
       transition: transform 0.3s ease;
     }
-
     .catalogo img:hover { transform: scale(1.05); }
-
-    /* =======================
-       🌸 SECCIONES
-    ======================== */
     #acerca, #contacto, #admin {
       padding: 80px 20px;
     }
-
     #acerca { background-color: #fff0f7; }
     #contacto { background-color: #fff7fb; }
-
     #admin {
       background-color: #f9ecf3;
       text-align: center;
       border-top: 2px solid #f5d0e0;
     }
-
-    /* =======================
-       🌸 TABLAS
-    ======================== */
     .table th {
       background-color: #b76e79 !important;
       color: white;
     }
-
     .table td, .table th {
       vertical-align: middle;
     }
-
-    /* =======================
-       🌸 FOOTER
-    ======================== */
     footer {
       background-color: #ffe6f2;
       color: #7b3f61;
@@ -273,18 +204,15 @@
       padding: 20px 0;
       margin-top: 50px;
     }
-
     footer a {
       color: #b76e79;
       text-decoration: none;
     }
-
     footer a:hover { text-decoration: underline; }
   </style>
 </head>
-
 <body>
-  <!-- 🌸 NAVBAR -->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
       {% block Titulo %}
@@ -292,14 +220,12 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse justify-content-end" id="menu">
         <ul class="navbar-nav align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
           <li class="nav-item"><a class="nav-link" href="#acerca">Sobre Amanda</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
           <li class="nav-item"><a class="nav-link" href="#admin">Admin</a></li>
-
           {% if user.is_authenticated %}
             <li class="nav-item"><a class="nav-link" href="{% url 'perfil' %}">Perfil</a></li>
             <li class="nav-item">
@@ -317,9 +243,8 @@
       {% endblock %}
     </div>
   </nav>
-
   {% block content %}
-  <!-- 🌸 HERO -->
+  <!-- HERO -->
   <section id="inicio" class="hero">
     <div>
       <h1>Diseños de Ensueño para tus Quince Años</h1>
@@ -327,11 +252,10 @@
       <a href="#catalogo" class="btn btn-pink btn-lg rounded-pill">Ver Colección</a>
     </div>
   </section>
-
-  <!-- 🌸 SHOWROOM -->
+  <!-- SHOWROOM -->
   <section id="catalogo" class="catalogo">
     <div class="container">
-      <h2 class="text-center mb-5">✨ Showroom de Vestidos ✨</h2>
+      <h2 class="text-center mb-5">Showroom de Vestidos</h2>
       <div class="row g-4">
         {% for catalogo in catalogos %}
         <div class="col-md-4 col-sm-6">
@@ -350,8 +274,7 @@
       </div>
     </div>
   </section>
-
-  <!-- 🌸 SOBRE AMANDA -->
+  <!-- SOBRE AMANDA -->
   <section id="acerca">
     <div class="container text-center">
       <h2>Sobre Amanda</h2>
@@ -367,8 +290,7 @@
       </p>
     </div>
   </section>
-
-  <!-- 🌸 CONTACTO -->
+  <!-- CONTACTO -->
   <section id="contacto" class="text-center">
     <div class="container">
       <h2>Contáctanos</h2>
@@ -388,27 +310,24 @@
     </div>
   </section>
   {% endblock %}
-
-  <!-- 🌸 ADMIN -->
+  <!-- ADMIN -->
   <section id="admin">
     <div class="container">
       <h2>Panel de Administración</h2>
       <p class="lead mt-3 mb-4">Actualiza la información de tu base de datos con un solo clic</p>
       <a href="/admin/" class="btn btn-listar">Administración</a>
       <div class="mt-3">
-        <a href="{% url 'listar_catalogo' %}" class="btn btn-listar">📦 Catálogo</a>
-        <a href="{% url 'clientes_list' %}" class="btn btn-listar">👩‍🦰 Clientes</a>
-        <a href="{% url 'proveedores_list' %}" class="btn btn-listar">🚚 Proveedores</a>
+        <a href="{% url 'listar_catalogo' %}" class="btn btn-listar">Catálogo</a>
+        <a href="{% url 'clientes_list' %}" class="btn btn-listar">Clientes</a>
+        <a href="{% url 'proveedores_list' %}" class="btn btn-listar">Proveedores</a>
       </div>
     </div>
   </section>
-
-  <!-- 🌸 FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 Amanda Boutique | Diseños de ensueño para tus quince años</p>
     <p><a href="#inicio">Volver arriba ↑</a></p>
   </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

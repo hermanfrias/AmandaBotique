@@ -1,5 +1,4 @@
 {% extends "BoutiqueApp/index.html" %}
-
 {% block Titulo %}
 <a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique</a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -23,7 +22,6 @@
     </ul>
 </div>
 {% endblock %}
-
 {% block content %}
 <div class="container py-5">
     <div class="card shadow-lg mx-auto border-0 rounded-4" style="max-width: 750px; background-color: #fff5fa;">
@@ -35,47 +33,39 @@
                 <div class="col-md-4 fw-semibold text-secondary">Identificación:</div>
                 <div class="col-md-8">{{ clientes.identificacion }}</div>
             </div>
-
             <div class="row mb-2">
                 <div class="col-md-4 fw-semibold text-secondary">Nombre:</div>
                 <div class="col-md-8">{{ clientes.nombre }}</div>
             </div>
-
             <div class="row mb-2">
                 <div class="col-md-4 fw-semibold text-secondary">Apellido:</div>
                 <div class="col-md-8">{{ clientes.apellido }}</div>
             </div>
-
             <div class="row mb-2">
                 <div class="col-md-4 fw-semibold text-secondary">Teléfono:</div>
                 <div class="col-md-8">{{ clientes.telefono }}</div>
             </div>
-
             <div class="row mb-2">
                 <div class="col-md-4 fw-semibold text-secondary">Email:</div>
                 <div class="col-md-8">{{ clientes.email }}</div>
             </div>
-
             <div class="row mb-2">
                 <div class="col-md-4 fw-semibold text-secondary">Dirección:</div>
                 <div class="col-md-8" style="white-space: pre-wrap;">{{ clientes.direccion }}</div>
             </div>
-
             <div class="row mb-2">
                 <div class="col-md-4 fw-semibold text-secondary">Fecha de Nacimiento:</div>
                 <div class="col-md-8">{{ clientes.fecha_nacimiento }}</div>
             </div>
-
             <div class="row mb-2">
                 <div class="col-md-4 fw-semibold text-secondary">Fecha de Registro:</div>
                 <div class="col-md-8">{{ clientes.fecha_creacion }}</div>
             </div>
-
             <div class="text-center mt-4">
-                <a href="{% url 'clientes_list' %}" 
-                   class="btn btn-editar px-4 py-2 me-2">Volver</a>
                 <a href="{% url 'clientes_update' clientes.identificacion %}" 
-                   class="btn btn-volver px-4 py-2">Editar</a>
+                    class="btn btn-editar px-4 py-2 me-2">Editar</a>
+                <a href="{% url 'clientes_list' %}" 
+                    class="btn btn-volver px-4 py-2">Volver</a>
             </div>
         </div>
     </div>

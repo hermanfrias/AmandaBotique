@@ -1,5 +1,4 @@
 {% extends "BoutiqueApp/index.html" %}
-
 {% block Titulo %} <a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
@@ -33,7 +32,6 @@
         <form method="POST">
             {% csrf_token %}
             {{ form.non_field_errors }}
-
             <!-- Mostrar los campos del formulario manualmente para personalización -->
             {% for field in form %}
             <div class="mb-3">
@@ -47,15 +45,12 @@
                 {% endif %}
             </div>
             {% endfor %}
-
             <div class="text-center mt-4">
-                <button type="submit" class="btn btn-admin">                      
-                    Guardar Cambios
-                </button>
-
-                <a href="{% url 'proveedores_list' %}" class='btn btn-admin'>Cancelar</a>
+                <button type="submit" class="btn btn-editar px-4 py-2 me-2">Guardar</button>
+                <a href="{% url 'proveedores_list' %}" class='btn btn-volver px-4 py-2'>Volver</a>
             </div>
         </form>
     </div>
 </div>
 {% endblock %}
+

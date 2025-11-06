@@ -24,7 +24,7 @@ def actualizar_catalogo(request):
 def listar_catalogo(request):
     query = request.GET.get('buscar', '')
     if len(query) > 0:
-        catalogos = Catalogo.objects.filter(nombre__icontains=query).order_by('codigo')
+        catalogos = Catalogo.objects.filter(modelo__icontains=query).order_by('modelo')
     else:       
         catalogos = Catalogo.objects.all()
     return render(request, 'BoutiqueApp/listar_catalogo.html', {'catalogos': catalogos})

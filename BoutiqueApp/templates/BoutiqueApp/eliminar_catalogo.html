@@ -1,5 +1,4 @@
 {% extends "BoutiqueApp/index.html" %}
-
 {% block Titulo %}
 <a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique</a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -23,12 +22,11 @@
     </ul>
 </div>
 {% endblock %}
-
 {% block content %}
 <div class="container my-5">
     <div class="card shadow-lg mx-auto border-0 rounded-4" style="max-width: 600px; background-color: #fff5fa;">
         <div class="card-header text-center fw-bold text-pink fs-5" style="background-color: #ffe6f2;">
-            ⚠️ Confirmar Eliminación
+            Confirmar Eliminación
         </div>
         <div class="card-body text-center">
             <h5>¿Estás seguro de que deseas eliminar el producto?</h5>
@@ -37,7 +35,6 @@
                 <strong>Modelo:</strong> {{ catalogo.modelo }}<br>
                 <strong>Precio:</strong> ${{ catalogo.precio }}
             </p>
-
             <div class="d-flex justify-content-center gap-3 mt-4">
                 <form method="POST">
                     {% csrf_token %}

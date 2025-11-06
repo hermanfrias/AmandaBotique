@@ -1,5 +1,4 @@
 {% extends "BoutiqueApp/index.html" %}
-
 {% block Titulo %} <a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
@@ -22,7 +21,6 @@
         </ul>
     </div>
 {% endblock %}
-
 {% block content %}
 <div class="container my-5">
     <div class="card shadow-lg" style="border: 2px solid #F8C8DC; border-radius: 15px;">
@@ -35,43 +33,33 @@
                 <div class="col-md-4"><strong>Código del Proveedor:</strong></div>
                 <div class="col-md-8">{{ proveedores.codigo_proveedor }}</div>
             </div>
-
             <div class="row mb-3">
                 <div class="col-md-4"><strong>Nombre:</strong></div>
                 <div class="col-md-8">{{ proveedores.nombre }}</div>
             </div>
-
             <div class="row mb-3">
                 <div class="col-md-4"><strong>Contacto:</strong></div>
                 <div class="col-md-8">{{ proveedores.contacto }}</div>
             </div>
-
             <div class="row mb-3">
                 <div class="col-md-4"><strong>Teléfono:</strong></div>
                 <div class="col-md-8">{{ proveedores.telefono }}</div>
             </div>
-
             <div class="row mb-3">
                 <div class="col-md-4"><strong>Email:</strong></div>
                 <div class="col-md-8">{{ proveedores.email }}</div>
             </div>
-
             <div class="row mb-3">
                 <div class="col-md-4"><strong>Dirección:</strong></div>
                 <div class="col-md-8">{{ proveedores.direccion }}</div>
             </div>
-
             <div class="row mb-3">
                 <div class="col-md-4"><strong>Fecha de Registro:</strong></div>
                 <div class="col-md-8">{{ proveedores.fecha_creacion }}</div>
             </div>
-
             <div class="text-center mt-4">
-                <a href="{% url 'proveedores_list' %}" class="btn btn-admin">Volver a la Lista</a>
-
-                <a href="{% url 'proveedores_update' proveedores.codigo_proveedor %}" class="btn btn-admin">
-                    Editar Proveedor
-                </a>
+                <a href="{% url 'proveedores_update' proveedores.codigo_proveedor %}" class="btn btn-editar px-4 py-2 me-2">Editar</a>
+                <a href="{% url 'proveedores_list' %}" class="btn btn-volver px-4 py-2">Volver</a>
             </div>
         </div>
     </div>
