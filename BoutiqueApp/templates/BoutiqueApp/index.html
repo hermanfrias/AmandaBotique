@@ -179,7 +179,7 @@
       border-radius: 15px;
       transition: transform 0.3s ease;
     }
-    .catalogo img:hover { transform: scale(1.05); }
+    .catalogo img:hover { transform: scale(1.50); }
     #acerca, #contacto, #admin {
       padding: 80px 20px;
     }
@@ -216,15 +216,15 @@
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
       {% block Titulo %}
-      <a class="navbar-brand" href="#">Inicio | Amanda Boutique</a>
+      <a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="menu">
         <ul class="navbar-nav align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
-          <li class="nav-item"><a class="nav-link" href="#acerca">Sobre Amanda</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'index' %}#catalogo">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'index' %}#acerca">Sobre Amanda</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'index' %}#contacto">Contacto</a></li>
           <li class="nav-item"><a class="nav-link" href="#admin">Admin</a></li>
           {% if user.is_authenticated %}
             <li class="nav-item"><a class="nav-link" href="{% url 'perfil' %}">Perfil</a></li>
@@ -265,7 +265,7 @@
             <div class="card-body text-center">
               <h5 class="card-title">{{ catalogo.modelo }}</h5>
               <p class="text-muted mb-2"><strong>Estilo:</strong> {{ catalogo.estilo }}</p>
-              <p class="card-text">{{ catalogo.descripcion|truncatechars:80 }}</p>
+              <p class="card-text">{{ catalogo.descripcion}}</p>
               <p class="fw-bold fs-5">${{ catalogo.precio }}</p>
             </div>
           </div>

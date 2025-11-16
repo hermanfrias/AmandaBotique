@@ -1,29 +1,4 @@
 {% extends "BoutiqueApp/index.html" %}
-
-{% block Titulo %}
-<a class="navbar-brand" href="{% url 'index' %}">Inicio | Amanda Boutique</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-    <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse justify-content-end" id="menu">
-    <ul class="navbar-nav align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="#admin">Admin</a></li>
-        {% if user.is_authenticated %}
-            <li class="nav-item"><a class="nav-link" href="{% url 'perfil' %}">Perfil</a></li>
-            <li class="nav-item">
-                <form action="{% url 'logout' %}" method="POST" class="d-inline">
-                    {% csrf_token %}
-                    <button type="submit" class="btn-logout">Logout</button>
-                </form>
-            </li>
-        {% else %}
-            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'registrar' %}">Registrarse</a></li>
-        {% endif %}
-    </ul>
-</div>
-{% endblock %}
-
 {% block content %}
 <div class="container py-5">
     <div class="card shadow-lg mx-auto border-0 rounded-4" style="max-width: 750px; background-color: #fff5fa;">
@@ -44,7 +19,6 @@
                     </div>
                     {% endfor %}
                 </div>
-
                 <div class="text-center mt-4">
                     <button type="submit" class="btn btn-editar px-4 py-2 me-2">Guardar</button>
                     <a href="{% url 'clientes_list' %}" class="btn btn-volver px-4 py-2">Volver</a>                
