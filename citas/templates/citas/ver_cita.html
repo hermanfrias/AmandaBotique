@@ -1,0 +1,21 @@
+{% extends "BoutiqueApp/index.html" %}
+{% block content %}
+<div class="container py-5">
+    <h2 class="mb-4 text-center">Detalle de Cita</h2>
+    <div class="card shadow-sm border-0 p-4" style="max-width: 600px; margin:auto;">
+        <h4 class="mb-3">{{ cita.cliente }}</h4>
+        <p><strong>Fecha:</strong> {{ cita.fecha }}</p>
+        <p><strong>Hora:</strong> {{ cita.hora }}</p>
+        <p><strong>Acción:</strong> {{ cita.get_accion_display }}</p>
+        <p><strong>Medidas:</strong> {{ cita.medidas|default:"-" }}</p>
+        <p><strong>Moneda:</strong> {{ cita.get_moneda_display }}</p>
+        <p><strong>Precio:</strong> ${{ cita.precio }}</p>
+        <p><strong>Abono:</strong> ${{ cita.abono }}</p>
+        <p><strong>Pago Total:</strong> ${{ cita.pago_total }}</p>
+        <p><strong>Descripción:</strong> {{ cita.descripcion|default:"-" }}</p>
+        <div class="text-center mt-4">
+            <a href="{% url 'listar_citas' %}" class="btn btn-volver">Volver</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

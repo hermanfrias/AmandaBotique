@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-qbxmoybegt=*nlp!^+p_xe4xh)+c8c$p@a4c@%&2&jvzuxivbw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.0', '192.168.1.193']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'ProveedoresApp',    
     'LoginApp',
     'ClientesApp',
+    'citas'
 ]
 
 MIDDLEWARE = [

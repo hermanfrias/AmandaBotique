@@ -1,0 +1,10 @@
+{% extends "BoutiqueApp/index.html" %}
+{% block content %}
+    <div class="container py-5 text-center">
+        <h2 class="mb-4">Eliminar Cita</h2>
+        <p>¿Eliminar cita de <strong>{{ cita.cliente }}</strong> el <strong>{{ cita.fecha }}</strong> a <strong>{{ cita.hora }}</strong>?</p>
+        <form method="post">{% csrf_token %}<button type="submit" class="btn btn-eliminar">Eliminar</button>
+            <a href="{% url 'listar_citas' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+</div>
+{% endblock %}
