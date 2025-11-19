@@ -171,33 +171,43 @@ table thead th > a:hover {
 .catalogo {
     padding: 80px 0;
 }
-/* Contenedor de la imagen para recortar solo dentro de la tarjeta */
+/* Contenedor de imagen */
 .img-container {
-    height: 400px;           /* altura fija de la tarjeta */
-    overflow: hidden;         /* evita que el zoom se salga */
-    border-radius: 15px;      /* bordes redondeados */
-    background-color: #f8f9fa; /* color de fondo si la imagen no llena */
+    height: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: #f8f9fa; /* relleno */
+    transition: box-shadow 0.3s ease;
 }
 
-/* Imagen con efecto hover y mantener toda visible */
+/* Imagen con hover elegante */
 .img-container img {
     height: 100%;
     width: 100%;
-    object-fit: contain;      /* muestra toda la imagen sin recortar */
-    transition: transform 0.4s ease;
+    object-fit: contain;   /* muestra la imagen completa */
+    transition: transform 0.4s ease, filter 0.4s ease;
     display: block;
 }
 
-/* Hover con zoom */
-.img-container img:hover {
+/* Hover: zoom + brillo */
+.img-container:hover img {
     transform: scale(1.50);
+    filter: brightness(1.1);
 }
 
-/* Opcional: estilos para la tarjeta */
+/* Sombra y borde rosa en hover de la tarjeta */
 .catalogo {
     border-radius: 15px;
     overflow: hidden;
+    transition: box-shadow 0.4s ease, border 0.4s ease;
+    border: 2px solid transparent;
 }
+
+.catalogo:hover {
+    box-shadow: 0 10px 25px rgba(255, 76, 156, 0.4);
+    border: 2px solid #ff4c9c; /* borde rosa */
+}
+
 
 #acerca { background-color: #fff0f7; }
 #contacto { background-color: #fff7fb; }
