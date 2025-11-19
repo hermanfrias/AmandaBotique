@@ -8,7 +8,6 @@ class Clientes(models.Model):
     email = models.EmailField(unique=True)
     telefono = models.CharField(max_length=15)
     direccion = models.TextField()
-    fecha_nacimiento = models.DateField(null=True)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

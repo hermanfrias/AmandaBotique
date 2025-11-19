@@ -3,30 +3,38 @@ from django.contrib.auth.models import User
 
 class Cita(models.Model):
     ACCIONES = [
-        ('toma_medidas', 'Toma de Medidas'),
-        ('pruebas', 'Pruebas'),
-        ('retiro', 'Retiro'),
-        ('otros', 'Otros'),
+        ('Medidas/Diseño', 'Medidas/Diseño'),
+        ('Pruebas', 'Pruebas'),
+        ('Entrega', 'Entrega'),
+        ('Culminado', 'Culminado'),
+        ('Cancelada', 'Cancelada'),
+        ('Otros', 'Otros'),
     ]
 
     MONEDAS = [
-        ('bs', 'Bs'),
-        ('usd', '$'),
+        ('Bs', 'Bs'),
+        ('$', '$'),
     ]
 
     cliente = models.CharField(max_length=100)
     fecha = models.DateField()
     hora = models.TimeField()
     descripcion = models.TextField(blank=True, null=True)
-    medidas = models.CharField(max_length=100, blank=True, null=True)  # nuevo campo
-    precio = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    abono = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    pago_total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    busto = models.CharField(max_length=5, blank=True, null=True)  
+    cintura = models.CharField(max_length=5, blank=True, null=True) 
+    largo = models.CharField(max_length=5, blank=True, null=True)  
+    otra = models.CharField(max_length=50, blank=True, null=True)   
+    precio = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)  # nuevo campo
+    abono = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    pago_total = models.DecimalField(max_digits=10, decimal_places=2,null=True, blank=True)
     moneda = models.CharField(max_length=3, choices=MONEDAS, default='bs')  # nuevo campo
     accion = models.CharField(max_length=20, choices=ACCIONES, default='otros')
+    fecha_entrega = models.DateField(null=True, blank=True)
 
     class Meta:
         ordering = ['fecha', 'hora']
 
     def __str__(self):
         return f"{self.cliente} - {self.fecha} {self.hora} ({self.get_accion_display()})"
+
+

@@ -18,7 +18,6 @@
         <table class="table table-striped table-bordered align-middle table-sm text-center" style="table-layout: auto; width: 100%;">
             <thead class="table-dark">
                 <tr>
-                    <th class="p-1">Id</th>
                     <th class="p-1">Nombre</th>
                     <th class="p-1">Apellido</th>
                     <th class="p-1">Dirección</th>
@@ -30,7 +29,6 @@
             <tbody>
                 {% for cliente in clientes %}
                 <tr>
-                    <td class="p-1">{{ cliente.identificacion }}</td>
                     <td class="p-1">{{ cliente.nombre }}</td>
                     <td class="p-1">{{ cliente.apellido }}</td>
                     <td class="p-1" style="white-space: normal;">{{ cliente.direccion }}</td>

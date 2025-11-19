@@ -19,7 +19,6 @@
           <th>Código</th>
           <th>Modelo</th>
           <th>Estilo</th>
-          <th>Descripción</th>
           <th>Precio</th>
           <th>Acciones</th>
         </tr>
@@ -30,7 +29,6 @@
           <td>{{ catalogo.codigo }}</td>
           <td>{{ catalogo.modelo }}</td>
           <td>{{ catalogo.estilo }}</td>
-          <td>{{ catalogo.descripcion }}</td>
           <td>${{ catalogo.precio }}</td>
           <td class="acciones-cell">
             <a href="{% url 'detalle_catalogo' catalogo.codigo %}" class="btn btn-ver btn-sm">Ver</a>

@@ -1,0 +1,197 @@
+.btn-logout {
+    background: none;
+    border: none;
+    color: #7b3f61 !important;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.btn-logout:hover {
+    color: #b76e79 !important;
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+.navbar .nav-item {
+    display: flex;
+    align-items: center;
+}
+.navbar-nav .nav-link {
+    padding: 8px 12px;
+    color: #7b3f61 !important;
+}
+.navbar-nav .nav-link:hover {
+    color: #b76e79 !important;
+}
+.acciones-cell {
+    white-space: nowrap;
+}
+.acciones-cell .btn {
+    display: inline-block;
+    margin: 0 4px;
+    vertical-align: middle;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+  /* Botones personalizados */
+.btn-volver {
+    background-color: #ffb6c1;
+    color: white;
+}
+.btn-volver:hover {
+    background-color: #ff8fa3;
+}
+.btn-editar {
+    background-color: #e83e8c;
+    color: white;
+}
+.btn-editar:hover {
+    background-color: #c92a76;
+}
+  /* Responsivo */
+@media (max-width: 768px) {
+    .acciones-cell {
+        white-space: normal;
+    }
+    .acciones-cell .btn {
+        display: block;
+        width: 100%;
+        margin: 6px 0;
+    }
+}
+.acciones-cell {
+    white-space: nowrap; /* evita que los botones salten de línea */
+}
+.acciones-cell .btn {
+    display: inline-block;
+    margin: 0 3px;
+    vertical-align: middle;
+}
+.acciones-cell .btn-sm {
+    padding: 6px 10px;
+    font-size: 0.88rem;
+    border-radius: 8px;
+}
+.acciones-cell .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 768px) {
+    .acciones-cell {
+        white-space: normal;
+    }
+    .acciones-cell .btn {
+        display: block;
+        width: 100%;
+        margin: 4px 0;
+    }
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff7fb;
+    color: #4a235a;
+    scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+    color: #b76e79;
+}
+.text-pink { color: #b76e79 !important; }
+.navbar {
+    background-color: #ffe6f2;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #b76e79 !important;
+}
+.nav-link {
+    color: #7b3f61 !important;
+    font-weight: 500;
+    padding: 8px 12px;
+}
+.nav-link:hover { color: #b76e79 !important; }
+.navbar .nav-item {
+    display: flex;
+    align-items: center;
+}
+.btn-logout {
+    background: none;
+    border: none;
+    color: #7b3f61 !important;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.btn-logout:hover {
+    color: #b76e79 !important;
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+.hero {
+    background: linear-gradient(rgba(183,110,121,0.4), rgba(183,110,121,0.4));
+    color: white;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+.btn-pink, .btn-buscar, .btn-listar, .btn-ver, .btn-editar, .btn-eliminar {
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.btn-pink, .btn-buscar, .btn-listar, .btn-ver { background-color: #e6b2c6; }
+.btn-editar { background-color: #b76e79; }
+.btn-eliminar { background-color: #f28ca3; }
+.btn-pink:hover, .btn-buscar:hover, .btn-listar:hover, .btn-ver:hover {
+    background-color: #d48ba0;
+    transform: translateY(-2px);
+}
+.btn-editar:hover { background-color: #8c4a56; transform: translateY(-2px); }
+.btn-eliminar:hover { background-color: #e66780; transform: translateY(-2px); }
+.catalogo {
+    padding: 80px 0;
+}
+.catalogo img {
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+.catalogo img:hover { transform: scale(1.50); }
+#acerca, #contacto, #admin {
+    padding: 80px 20px;
+}
+#acerca { background-color: #fff0f7; }
+#contacto { background-color: #fff7fb; }
+#admin {
+    background-color: #f9ecf3;
+    text-align: center;
+    border-top: 2px solid #f5d0e0;
+}
+.table th {
+    background-color: #b76e79 !important;
+    color: white;
+}
+.table td, .table th {
+    vertical-align: middle;
+}
+footer {
+    background-color: #ffe6f2;
+    color: #7b3f61;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+footer a {
+    color: #b76e79;
+    text-decoration: none;
+}
+footer a:hover { text-decoration: underline; }

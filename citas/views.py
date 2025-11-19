@@ -8,7 +8,11 @@ from .forms import CitaForm
 
 @login_required
 def listar_citas(request):
-    citas = Cita.objects.all()
+    query = request.GET.get('buscar', '')
+    if len(query) > 0:
+        citas = Cita.objects.filter(cliente__icontains=query).order_by('cliente')
+    else:       
+        citas = Cita.objects.all()
     return render(request, 'citas/listar_citas.html', {'citas': citas})
 
 @login_required
@@ -43,7 +47,6 @@ def eliminar_cita(request, pk):
     cita=get_object_or_404(Cita, pk=pk)
     if request.method=='POST':
         cita.delete()
-        messages.success(request,"Cita eliminada correctamente")
         return redirect('listar_citas')
     return render(request,'citas/eliminar_cita.html',{'cita':cita})
 

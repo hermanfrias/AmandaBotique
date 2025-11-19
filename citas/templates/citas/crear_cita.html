@@ -2,7 +2,8 @@
 {% block content %}
 <div class="container py-5">
     <h2 class="mb-4 text-center">Crear Cita</h2>
-    <form method="post" class="row g-3">{% csrf_token %}
+    <form method="post" class="row g-3">
+        {% csrf_token %}
         <div class="col-md-6">
             <label for="id_cliente" class="form-label">Cliente</label>
             {{ form.cliente }}
@@ -20,8 +21,25 @@
             {{ form.accion }}
         </div>
         <div class="col-md-6">
-            <label for="id_medidas" class="form-label">Medidas</label>
-            {{ form.medidas }}
+            <label for="id_fecha_entrega" class="form-label">Fecha de Entrega</label>
+            {{ form.fecha_entrega }}
+        </div>
+        <p><strong>Medidas:</strong></p>
+        <div class="col-md-6">
+            <label for="id_busto" class="form-label">Busto</label>
+            {{ form.busto }}
+        </div>
+        <div class="col-md-6">
+            <label for="id_cintura" class="form-label">Cintura</label>
+            {{ form.cintura }}
+        </div>
+        <div class="col-md-6">
+            <label for="id_largo" class="form-label">Largo</label>
+            {{ form.largo }}
+        </div>
+        <div class="col-md-6">
+            <label for="id_otra" class="form-label">Otra</label>
+            {{ form.otra }}
         </div>
         <div class="col-md-6">
             <label for="id_moneda" class="form-label">Moneda</label>
@@ -44,7 +62,8 @@
             {{ form.descripcion }}
         </div>
         <div class="col-12 text-center mt-3">
-            <button type="submit" class="btn btn-pink btn-lg rounded-pill">Guardar Cita</button>
+            <button type="submit" class="btn btn-pink btn-sm me-2">Guardar Cita</button>
+            <a href="{% url 'listar_citas' %}" class="btn btn-editar btn-sm">Volver</a>
         </div>
     </form>
 </div>
