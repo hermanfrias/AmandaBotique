@@ -6,14 +6,38 @@ from django.utils.dateformat import format
 from .models import Cita
 from .forms import CitaForm
 
+# @login_required
+# def listar_citas(request):
+#     query = request.GET.get('buscar', '')
+#     if len(query) > 0:
+#         citas = Cita.objects.filter(cliente__icontains=query).order_by('cliente')
+#     else:       
+#         citas = Cita.objects.all()
+#     return render(request, 'citas/listar_citas.html', {'citas': citas})
 @login_required
 def listar_citas(request):
+    # Búsqueda por cliente
     query = request.GET.get('buscar', '')
-    if len(query) > 0:
-        citas = Cita.objects.filter(cliente__icontains=query).order_by('cliente')
-    else:       
-        citas = Cita.objects.all()
+    citas = Cita.objects.all()
+    
+    if query:
+        citas = citas.filter(cliente__icontains=query)
+
+    # Orden dinámico por GET
+    orden = request.GET.get('orden', '')
+    if orden == "fecha":
+        citas = citas.order_by("fecha")
+    elif orden == "-fecha":
+        citas = citas.order_by("-fecha")
+    elif orden == "entrega":
+        citas = citas.order_by("fecha_entrega")
+    elif orden == "-entrega":
+        citas = citas.order_by("-fecha_entrega")
+    else:
+        citas = citas.order_by("cliente")  # Orden por defecto
+
     return render(request, 'citas/listar_citas.html', {'citas': citas})
+
 
 @login_required
 def crear_cita(request):

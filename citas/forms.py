@@ -11,8 +11,8 @@ class CitaForm(forms.ModelForm):
         ]
         widgets = {
             'cliente': forms.TextInput(attrs={'class':'form-control'}),
-            'fecha': forms.DateInput(attrs={'type':'date','class':'form-control'}),
-            'fecha_entrega': forms.DateInput(attrs={'type':'date','class':'form-control'}),
+            'fecha': forms.DateInput(attrs={'type':'date','class':'form-control'}, format ='%Y-%m-%d',),
+            'fecha_entrega': forms.DateInput(attrs={'type':'date','class':'form-control'}, format ='%Y-%m-%d'),
             'hora': forms.TimeInput(attrs={'type':'time','class':'form-control'}),
             'descripcion': forms.Textarea(attrs={'class':'form-control','rows':3}),
             'busto': forms.TextInput(attrs={'class':'form-control'}),

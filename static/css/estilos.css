@@ -95,6 +95,15 @@ h1, h2, h3, h4, h5 {
     font-family: 'Playfair Display', serif;
     color: #b76e79;
 }
+table thead th > a {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block;      /* Hace clickeable toda el área */
+    width: 100%;
+}
+table thead th > a:hover {
+    color: #ff4c9c !important;
+}
 .text-pink { color: #b76e79 !important; }
 .navbar {
     background-color: #ffe6f2;
@@ -143,6 +152,7 @@ h1, h2, h3, h4, h5 {
     font-weight: 700;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 }
+
 .btn-pink, .btn-buscar, .btn-listar, .btn-ver, .btn-editar, .btn-eliminar {
     color: white;
     border: none;
@@ -161,14 +171,34 @@ h1, h2, h3, h4, h5 {
 .catalogo {
     padding: 80px 0;
 }
-.catalogo img {
+/* Contenedor de la imagen para recortar solo dentro de la tarjeta */
+.img-container {
+    height: 400px;           /* altura fija de la tarjeta */
+    overflow: hidden;         /* evita que el zoom se salga */
+    border-radius: 15px;      /* bordes redondeados */
+    background-color: #f8f9fa; /* color de fondo si la imagen no llena */
+}
+
+/* Imagen con efecto hover y mantener toda visible */
+.img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;      /* muestra toda la imagen sin recortar */
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+/* Hover con zoom */
+.img-container img:hover {
+    transform: scale(1.50);
+}
+
+/* Opcional: estilos para la tarjeta */
+.catalogo {
     border-radius: 15px;
-    transition: transform 0.3s ease;
+    overflow: hidden;
 }
-.catalogo img:hover { transform: scale(1.50); }
-#acerca, #contacto, #admin {
-    padding: 80px 20px;
-}
+
 #acerca { background-color: #fff0f7; }
 #contacto { background-color: #fff7fb; }
 #admin {
@@ -182,6 +212,7 @@ h1, h2, h3, h4, h5 {
 }
 .table td, .table th {
     vertical-align: middle;
+    color: #222 !important;
 }
 footer {
     background-color: #ffe6f2;
