@@ -4,7 +4,7 @@ class Catalogo(models.Model):
     codigo = models.CharField(max_length=20)
     modelo = models.CharField(max_length=100)
     estilo = models.CharField(max_length=100)
-    descripcion = models.TextField()
+    descripcion = models.TextField(max_length=300)
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     imagen_modelo = models.ImageField(upload_to = 'imagenes', null=True)
         

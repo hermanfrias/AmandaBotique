@@ -159,7 +159,7 @@ table thead th > a:hover {
     border-radius: 8px;
     transition: all 0.3s ease;
 }
-.btn-pink, .btn-buscar, .btn-listar, .btn-ver { background-color: #e6b2c6; }
+.btn-pink, .btn-buscar, .btn-ver { background-color: #e6b2c6; }
 .btn-editar { background-color: #b76e79; }
 .btn-eliminar { background-color: #f28ca3; }
 .btn-pink:hover, .btn-buscar:hover, .btn-listar:hover, .btn-ver:hover {
@@ -269,5 +269,27 @@ footer a:hover { text-decoration: underline; }
 
     .btn-group-catalogo a {
         margin: 6px !important;
+    }
+}
+
+.btn-listar {
+    background: #b76e79;
+    color: #fff;
+    font-weight: 400;
+    border-radius: 12px;
+    padding: 0.6rem 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(196, 41, 106, 0.3);
+}
+
+.btn-listar:hover {
+    background: #8c4a56;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(196, 41, 106, 0.4);
+}
+
+@media (max-width: 768px) {
+    .btn-listar {
+        width: 100%;
     }
 }
