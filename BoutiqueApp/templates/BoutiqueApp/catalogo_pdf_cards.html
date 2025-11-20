@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Catálogo Amanda Boutique PDF</title>
+<link rel="stylesheet" href="{% static 'BoutiqueApp/css/catalog_cards.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Amanda Boutique</h1>
+    <p>Catálogo Exclusivo</p>
+</header>
+
+<section class="container">
+    {% for item in catalogos %}
+    <div class="card">
+        <div class="image-box">
+            {% if item.imagen_modelo %}
+            <img src="{{ item.imagen_modelo.url }}">
+            {% else %}
+            <p class="no-img">Sin imagen</p>
+            {% endif %}
+        </div>
+        
+        <h2>{{ item.modelo }}</h2>
+        <p class="estilo">{{ item.estilo }}</p>
+        <p class="descripcion">{{ item.descripcion }}</p>
+
+        <p class="precio">${{ item.precio }}</p>
+    </div>
+    {% endfor %}
+</section>
+
+<footer>
+    <p>© {{ now|date:"Y" }} Amanda Boutique - Elegancia a tu medida</p>
+</footer>
+
+</body>
+</html>

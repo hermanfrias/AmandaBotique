@@ -236,3 +236,51 @@ footer a {
     text-decoration: none;
 }
 footer a:hover { text-decoration: underline; }
+
+/* Estilos generales de los botones */
+.btn-group-catalogo a {
+  margin: 3px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+/* Hover suave */
+.btn-group-catalogo a:hover {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+/* Botones */
+.btn-pink {
+  background-color: #e91e63;
+  color: #fff !important;
+  border: none;
+}
+
+.btn-listar {
+  background-color: #ff4081;
+  color: #fff !important;
+  border: none;
+}
+
+/* 📱 Responsive corregido y forzado */
+@media (max-width: 770px) {
+  .titulo-catalogo {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  .btn-group-catalogo {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .btn-group-catalogo a {
+    margin: 6px !important;
+  }
+}

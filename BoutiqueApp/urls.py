@@ -9,5 +9,8 @@ urlpatterns = [
     path('ver_catalogo/<str:codigo>/', views.detalle_catalogo, name='detalle_catalogo'),
     path('editar_catalogo/<str:codigo>/', views.editar_catalogo, name='editar_catalogo'),
     path('eliminar_catalogo/<str:codigo>/', views.eliminar_catalogo, name='eliminar_catalogo'),
+    path('catalogo/pdf/', views.catalogo_pdf, name='catalogo_pdf'),
+    path('catalogo/pdf/cards/', views.catalogo_pdf_cards, name='catalogo_pdf_cards'),
+
 ]
 

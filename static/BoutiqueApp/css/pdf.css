@@ -1,0 +1,54 @@
+/* Estilo general */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    padding: 10px;
+}
+
+header h1 {
+    color: #ff4c9c;
+    font-size: 30px;
+    margin: 0;
+}
+header p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+thead {
+    background: #ff4c9c;
+    color: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: center;
+}
+
+/* Imagen */
+td img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+}
