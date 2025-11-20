@@ -1,0 +1,140 @@
+/* --- Página PDF --- */
+@page { 
+    size: LETTER; 
+    margin: 5mm; 
+}
+
+/* --- Repetir encabezado en cada página --- */
+header {
+    position: running(header);
+}
+
+/* --- Body y fuente --- */
+body {
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+    color: #4b2c35;
+    background: #fdebf2;
+}
+
+/* --- Encabezado romántico --- */
+header {
+    text-align: center;
+    margin-bottom: 5px;  /* menos espacio */
+}
+
+header h1 {
+    color: #c4296a;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;   /* reduce espacio vertical */
+}
+
+header p {
+    font-size: 16px;
+    color: #7a5261;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* --- Grid de tarjetas: 2 columnas, 2 filas (4 por página) --- */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: calc((100vh - 80px)/2);  /* ajustar altura de cada tarjeta */
+    gap: 10px;
+    page-break-inside: avoid;
+    padding: 5px;
+}
+
+/* --- Tarjeta romántica --- */
+.card {
+    border: 1px solid #f3c7d8;
+    border-radius: 12px;
+    padding: 8px;
+    text-align: center;
+    background: #fff0f5;
+    background-size: cover;
+    font-weight: 700;
+    box-shadow: 0 0 6px rgba(224, 91, 135, 0.2);
+    page-break-inside: avoid;
+}
+
+/* --- Imagen sin recorte --- */
+.image-box {
+    max-height: 200px;   /* ajustado para que las tarjetas entren 4 por página */
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #f5d0df;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Sin imagen */
+.no-img {
+    font-size: 12px;
+    color: #8a6a78;
+    font-weight: 600;
+}
+
+/* --- Textos de tarjeta --- */
+.card h2 {
+    font-size: 22px;   /* menor tamaño para reducir espacio */
+    color: #bf0055;
+    margin: 3px 0;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.estilo {
+    font-size: 16px;
+    color: #6a3e50;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.descripcion {
+    font-size: 13px;
+    color: #58424d;
+    font-weight: 600;
+    margin: 3px 0;
+}
+
+.precio {
+    font-size: 18px;
+    font-weight: 700;
+    color: #a31657;
+    margin-top: 5px;
+}
+
+/* --- Footer --- */
+footer {
+    position: fixed;
+    font-size: 12px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #7e5b6c;
+    font-weight: 600;
+}
+
+/* --- Repetir encabezado en cada página para PDF --- */
+@media print {
+    header {
+        display: block;
+        position: running(header);
+    }
+    footer {
+        display: block;
+    }
+}

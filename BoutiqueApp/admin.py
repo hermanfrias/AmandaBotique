@@ -19,7 +19,7 @@ class CatalogoAdmin(admin.ModelAdmin):
     ordering = ('username',)
 
 # Personalización del título y encabezado del admin
-admin.site.site_header = "Administración de Amanda Boutique"
-admin.site.site_title = "Panel de Administración de Amanda Boutique"
+admin.site.site_header = "Administración de Amanda Mateo Boutique"
+admin.site.site_title = "Panel de Administración de Amanda Mateo Boutique"
 admin.site.index_title = "Bienvenido al Panel de Administración"
 

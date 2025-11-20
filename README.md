@@ -2,9 +2,9 @@
 ---
 ***English***
 
-# ***AMANDA BOUTIQUE***
+# ***Amanda Mateo Boutique***
 #### **Video Demo:** https://youtu.be/XqdgIVWoqEk
-### **Description:** *Amanda Boutique* is a Python project using the Django framework to create a showroom for a designer of custom-made quinceañera dresses. It also manages the databases for Catalogo, Clientes, Proveedores and PerfilUsuarios
+### **Description:** *Amanda Mateo Boutique* is a Python project using the Django framework to create a showroom for a designer of custom-made quinceañera dresses. It also manages the databases for Catalogo, Clientes, Proveedores and PerfilUsuarios
 
 **Technologies**
 
@@ -72,7 +72,7 @@
 
 **Usage:**
 - The Home button in the navbar will always take you to the home page.
-- The About Amanda button will take you to a descriptive section about Amanda Boutique.
+- The About Amanda button will take you to a descriptive section about Amanda Mateo Boutique.
 - The Contact button will take you to the contact information.
 - The Admin button will take you to the section where the different databases are created and listed.
 - If the user is not logged in, the Login and Register options will appear in the navbar. If they are logged in, the Login and Logout options will appear.
@@ -90,9 +90,9 @@
 
 
 
-# ***AMANDA BOUTIQUE***
+# ***Amanda Mateo Boutique***
 #### **Video Demo:** https://youtu.be/XqdgIVWoqEk
-### **Descripción**: *Amanda Boutique* es un proyecto realizado en Python con el framework de Django para crear un showroom para una diseñadora de vestidos para quinceañeras hechos a la mediada, adicionalmente para administrar las bases de datos de Catalogo, Clientes, Proveedores y PerfilUsuarios.
+### **Descripción**: *Amanda Mateo Boutique* es un proyecto realizado en Python con el framework de Django para crear un showroom para una diseñadora de vestidos para quinceañeras hechos a la mediada, adicionalmente para administrar las bases de datos de Catalogo, Clientes, Proveedores y PerfilUsuarios.
 **Tecnologías**
 - Python
 - Django
@@ -152,7 +152,7 @@
 
 **Uso:**
 - El botón de Inicio del navbar siempre llevara a la página de inicio.
-- El botón Sobre Amanda, los llevara a una sección descriptiva de Amanda Boutique.
+- El botón Sobre Amanda, los llevara a una sección descriptiva de Amanda Mateo Boutique.
 - El botón de Contacto, los llevara a la información de contacto.
 - El botón de Admin, los llevara la sección donde se crean y listan las diferentes bases de datos.
 - Si el usuario no está logeado le aparecerá en el NAVBAR las opciones de Login y Registrarse, en caso que no lo este le saldrán las opciones de Login y Logout.
