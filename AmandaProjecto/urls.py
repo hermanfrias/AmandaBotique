@@ -27,6 +27,7 @@ urlpatterns = [
     path("", include("LoginApp.urls")),
     path("clientes/", include("ClientesApp.urls")),
     path("citas/", include("citas.urls")),
+    path("flujo/", include("flujo.urls")),
     ]
 
 if settings.DEBUG:

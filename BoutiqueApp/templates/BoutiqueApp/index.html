@@ -115,7 +115,7 @@
   <!-- ADMIN -->
   <section id="admin" class="py-5" style="background: #fdebf2;">
   <div class="container text-center">
-    <h2 class="mb-3" style="color: #c4296a;">Panel de Administración</h2>
+    <h2 class="mb-3" style="color: #8a556bff;">Panel de Administración</h2>
     <p class="lead mb-4" style="color: #4b2c35;">Actualiza la información de tu base de datos con un solo clic</p>
 
     <div class="d-flex flex-wrap justify-content-center gap-3">
@@ -124,6 +124,9 @@
       <a href="{% url 'listar_catalogo' %}" class="btn btn-listar" style="min-width: 150px;">Catálogo</a>
       <a href="{% url 'clientes_list' %}" class="btn btn-listar" style="min-width: 150px;">Clientes</a>
       <a href="{% url 'proveedores_list' %}" class="btn btn-listar" style="min-width: 150px;">Proveedores</a>
+      <a href="{% url 'listar_movimientos' %}" class="btn btn-listar" style="min-width: 150px;">Flujo de Caja</a>
+      <a href="{% url 'listar_cotizaciones' %}" class="btn btn-listar" style="min-width: 150px;">Cotizacion</a>
+      <a href="{% url 'dashboard_flujo' %}" class="btn btn-listar" style="min-width: 150px;">Resumen</a>
     </div>
   </div>
 </section>

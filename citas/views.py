@@ -77,3 +77,35 @@ def eliminar_cita(request, pk):
 def ver_cita(request, pk):
     cita = get_object_or_404(Cita, pk=pk)
     return render(request, 'citas/ver_cita.html', {'cita': cita})
+
+@login_required
+def calendario_citas(request):
+    return render(request, 'citas/calendario.html')
+
+
+@login_required
+def eventos_citas(request):
+    from django.urls import reverse
+    
+    citas = Cita.objects.all()
+    eventos = []
+
+    for c in citas:
+        # Evento de fecha de cita (color rosa)
+        eventos.append({
+            "title": f"{c.cliente} - {c.get_accion_display()}",
+            "start": str(c.fecha),
+            "color": "#E91E63",
+            "url": reverse("ver_cita", args=[c.pk])  # 👈
+        })
+
+        # Evento de fecha de entrega (color morado)
+        if c.fecha_entrega:
+            eventos.append({
+                "title": f"Entrega: {c.cliente}",
+                "start": str(c.fecha_entrega),
+                "color": "#6A1B9A",
+                "url": reverse("ver_cita", args=[c.pk])  # 👈
+            })
+
+    return JsonResponse(eventos, safe=False)

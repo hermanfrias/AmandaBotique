@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'ProveedoresApp',    
     'LoginApp',
     'ClientesApp',
-    'citas'
+    'citas',
+    'flujo',
 ]
 
 MIDDLEWARE = [

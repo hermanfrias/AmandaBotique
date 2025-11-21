@@ -4,7 +4,10 @@
     <!-- Encabezado -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="text-pink fw-bold">Lista de Citas</h2>
-        <a href="{% url 'crear_cita' %}" class="btn btn-listar">Agregar</a>
+            <div class="btn-group-catalogo">
+            <a href="{% url 'crear_cita' %}" class="btn btn-listar">Agregar</a>
+            <a href="{% url 'calendario_citas' %}" class="btn btn-listar">Calendario</a>
+            </div>
     </div>
     <!-- Búsqueda -->
     <form method="GET" action="{% url 'listar_citas' %}" class="d-flex align-items-center mb-4">

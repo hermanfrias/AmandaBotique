@@ -1,0 +1,18 @@
+{% extends "BoutiqueApp/index.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'flujo/css/flujo.css' %}">
+<div class="container py-5">
+    <h2 class="text-pink fw-bold mb-4">Dashboard Flujo de Caja</h2>
+    <div class="row mb-4">
+        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Total Ingresos USD</h4><h3>${{ total_ingresos_usd }}</h3></div></div>
+        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Total Gastos USD</h4><h3>${{ total_gastos_usd }}</h3></div></div>
+        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Saldo USD</h4><h3>${{ saldo_usd }}</h3></div></div>
+    </div>
+    <div class="row mb-4">
+        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Total Ingresos Bs</h4><h3>{{ total_ingresos_bs}} Bs</h3></div></div>
+        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Total Gastos Bs</h4><h3>{{ total_gastos_bs }} Bs</h3></div></div>
+        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Saldo Bs</h4><h3>{{ saldo_bs }} Bs</h3></div></div>
+    </div>
+</div>
+{% endblock %}
