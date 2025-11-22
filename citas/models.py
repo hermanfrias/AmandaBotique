@@ -1,7 +1,10 @@
 from django.db import models
-from django.contrib.auth.models import User
+
+
+from django.conf import settings
 
 class Cita(models.Model):
+    creado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
     ACCIONES = [
         ('Medidas/Diseño', 'Medidas/Diseño'),
         ('Pruebas', 'Pruebas'),

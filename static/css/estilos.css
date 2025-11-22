@@ -1,350 +1,337 @@
-.btn-logout {
-    background: none;
-    border: none;
-    color: #7b3f61 !important;
-    font-weight: 500;
-    padding: 8px 0;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-.btn-logout:hover {
-    color: #b76e79 !important;
-    text-decoration: underline;
-    transform: translateY(-1px);
-}
-.navbar .nav-item {
-    display: flex;
-    align-items: center;
-}
-.navbar-nav .nav-link {
-    padding: 8px 12px;
-    color: #7b3f61 !important;
-}
-.navbar-nav .nav-link:hover {
-    color: #b76e79 !important;
-}
-.acciones-cell {
-    white-space: nowrap;
-}
-.acciones-cell .btn {
-    display: inline-block;
-    margin: 0 4px;
-    vertical-align: middle;
-    border-radius: 20px;
-    transition: all 0.2s ease;
-}
-  /* Botones personalizados */
+/* Botones personalizados */
 .btn-volver {
-    background-color: #ffb6c1;
-    color: white;
+  background-color: #ffb6c1;
+  color: white;
 }
 .btn-volver:hover {
-    background-color: #ff8fa3;
-}
-.btn-editar {
-    background-color: #e83e8c;
-    color: white;
-}
-.btn-editar:hover {
-    background-color: #c92a76;
-}
-  /* Responsivo */
-@media (max-width: 768px) {
-    .acciones-cell {
-        white-space: normal;
-    }
-    .acciones-cell .btn {
-        display: block;
-        width: 100%;
-        margin: 6px 0;
-    }
-}
-.acciones-cell {
-    white-space: nowrap; /* evita que los botones salten de línea */
-}
-.acciones-cell .btn {
-    display: inline-block;
-    margin: 0 3px;
-    vertical-align: middle;
-}
-.acciones-cell .btn-sm {
-    padding: 6px 10px;
-    font-size: 0.88rem;
-    border-radius: 8px;
-}
-.acciones-cell .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-}
-@media (max-width: 768px) {
-    .acciones-cell {
-        white-space: normal;
-    }
-    .acciones-cell .btn {
-        display: block;
-        width: 100%;
-        margin: 4px 0;
-    }
-}
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #fff7fb;
-    color: #4a235a;
-    scroll-behavior: smooth;
-}
-h1, h2, h3, h4, h5 {
-    color: #b76e79;
-}
-table thead th > a {
-    text-decoration: none !important;
-    color: inherit !important;
-    display: block;      /* Hace clickeable toda el área */
-    width: 100%;
-}
-table thead th > a:hover {
-    color: #ff4c9c !important;
-}
-.text-pink { color: #b76e79 !important; }
-.navbar {
-    background-color: #ffe6f2;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.navbar-brand {
-    font-size: 1.6rem;
-    color: #b76e79 !important;
-}
-.nav-link {
-    color: #7b3f61 !important;
-    font-weight: 500;
-    padding: 8px 12px;
-}
-.nav-link:hover { color: #b76e79 !important; }
-.navbar .nav-item {
-    display: flex;
-    align-items: center;
-}
-.btn-logout {
-    background: none;
-    border: none;
-    color: #7b3f61 !important;
-    font-weight: 500;
-    padding: 8px 12px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-.btn-logout:hover {
-    color: #b76e79 !important;
-    text-decoration: underline;
-    transform: translateY(-1px);
-}
-.hero {
-    background: linear-gradient(rgba(183,110,121,0.4), rgba(183,110,121,0.4));
-    color: white;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-}
-.hero h1 {
-    font-size: 3.2rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  background-color: #ff8fa3;
 }
 
-.btn-pink, .btn-buscar, .btn-listar, .btn-ver, .btn-editar, .btn-eliminar {
-    color: white;
-    border: none;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+.acciones-cell {
+  white-space: nowrap; /* evita que los botones salten de línea */
 }
-.btn-pink, .btn-buscar, .btn-ver { background-color: #e6b2c6; }
-.btn-editar { background-color: #b76e79; }
-.btn-eliminar { background-color: #f28ca3; }
-.btn-pink:hover, .btn-buscar:hover, .btn-listar:hover, .btn-ver:hover {
-    background-color: #d48ba0;
-    transform: translateY(-2px);
+.acciones-cell .btn {
+  display: inline-block;
+  margin: 0 3px;
+  vertical-align: middle;
 }
-.btn-editar:hover { background-color: #8c4a56; transform: translateY(-2px); }
-.btn-eliminar:hover { background-color: #e66780; transform: translateY(-2px); }
+.acciones-cell .btn-sm {
+  padding: 6px 10px;
+  font-size: 0.88rem;
+  border-radius: 8px;
+}
+.acciones-cell .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 768px) {
+  .acciones-cell {
+    white-space: normal;
+  }
+  .acciones-cell .btn {
+    display: block;
+    width: 100%;
+    margin: 4px 0;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #fff7fb;
+  color: #4a235a;
+  scroll-behavior: smooth;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #b76e79;
+}
+table thead th > a {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block; /* Hace clickeable toda el área */
+  width: 100%;
+}
+table thead th > a:hover {
+  color: #ff4c9c !important;
+}
+.text-pink {
+  color: #b76e79 !important;
+}
+.navbar {
+  background-color: #ffe6f2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+  font-size: 1.6rem;
+  color: #b76e79 !important;
+}
+.nav-link {
+  color: #7b3f61 !important;
+  font-weight: 500;
+  padding: 8px 12px;
+}
+.nav-link:hover {
+  color: #b76e79 !important;
+}
+.navbar .nav-item {
+  display: flex;
+  align-items: center;
+}
+.btn-logout {
+  background: none;
+  border: none;
+  color: #7b3f61 !important;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.btn-logout:hover {
+  color: #b76e79 !important;
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
+.hero {
+  background: linear-gradient(
+    rgba(183, 110, 121, 0.4),
+    rgba(183, 110, 121, 0.4)
+  );
+  color: white;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-pink,
+.btn-buscar,
+.btn-listar,
+.btn-ver,
+.btn-editar,
+.btn-eliminar {
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.btn-pink,
+.btn-buscar,
+.btn-ver {
+  background-color: #e6b2c6;
+}
+.btn-editar {
+  background-color: #b76e79;
+}
+.btn-eliminar {
+  background-color: #f28ca3;
+}
+.btn-pink:hover,
+.btn-buscar:hover,
+.btn-listar:hover,
+.btn-ver:hover {
+  background-color: #d48ba0;
+  transform: translateY(-2px);
+}
+.btn-editar:hover {
+  background-color: #8c4a56;
+  transform: translateY(-2px);
+}
+.btn-eliminar:hover {
+  background-color: #e66780;
+  transform: translateY(-2px);
+}
 .catalogo {
-    padding: 80px 0;
+  padding: 80px 0;
 }
 /* Contenedor de imagen */
 .img-container {
-    height: 400px;
-    overflow: hidden;
-    border-radius: 15px;
-    background-color: #f8f9fa; /* relleno */
-    transition: box-shadow 0.3s ease;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: #f8f9fa; /* relleno */
+  transition: box-shadow 0.3s ease;
 }
 
 /* Imagen con hover elegante */
 .img-container img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;   /* muestra la imagen completa */
-    transition: transform 0.4s ease, filter 0.4s ease;
-    display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: contain; /* muestra la imagen completa */
+  transition: transform 0.4s ease, filter 0.4s ease;
+  display: block;
 }
 
 /* Hover: zoom + brillo */
 .img-container:hover img {
-    transform: scale(1.50);
-    filter: brightness(1.1);
+  transform: scale(1.5);
+  filter: brightness(1.1);
 }
 
 /* Sombra y borde rosa en hover de la tarjeta */
 .catalogo {
-    border-radius: 15px;
-    overflow: hidden;
-    transition: box-shadow 0.4s ease, border 0.4s ease;
-    border: 2px solid transparent;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease, border 0.4s ease;
+  border: 2px solid transparent;
 }
 
 .catalogo:hover {
-    box-shadow: 0 10px 25px rgba(255, 76, 156, 0.4);
-    border: 2px solid #ff4c9c; /* borde rosa */
+  box-shadow: 0 10px 25px rgba(255, 76, 156, 0.4);
+  border: 2px solid #ff4c9c; /* borde rosa */
 }
 
-
-#acerca { background-color: #fff0f7; }
-#contacto { background-color: #fff7fb; }
+#acerca {
+  background-color: #fff0f7;
+}
+#contacto {
+  background-color: #fff7fb;
+}
 #admin {
-    background-color: #f9ecf3;
-    text-align: center;
-    border-top: 2px solid #f5d0e0;
+  background-color: #f9ecf3;
+  text-align: center;
+  border-top: 2px solid #f5d0e0;
 }
 .table th {
-    background-color: #b76e79 !important;
-    color: white;
+  background-color: #b76e79 !important;
+  color: white;
 }
-.table td, .table th {
-    vertical-align: middle;
-    color: #222 !important;
+.table td,
+.table th {
+  vertical-align: middle;
+  color: #222 !important;
 }
 footer {
-    background-color: #ffe6f2;
-    color: #7b3f61;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
+  background-color: #ffe6f2;
+  color: #7b3f61;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
 }
 footer a {
-    color: #b76e79;
-    text-decoration: none;
+  color: #b76e79;
+  text-decoration: none;
 }
-footer a:hover { text-decoration: underline; }
+footer a:hover {
+  text-decoration: underline;
+}
 
 /* Estilos generales de los botones */
 .btn-group-catalogo a {
-    margin: 3px;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-weight: 400;
-    transition: 0.3s ease;
+  margin: 3px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 400;
+  transition: 0.3s ease;
 }
 
 /* Hover suave */
 .btn-group-catalogo a:hover {
-    opacity: 0.85;
-    transform: scale(1.03);
+  opacity: 0.85;
+  transform: scale(1.03);
 }
 
 /* 📱 Responsive corregido y forzado */
 @media (max-width: 770px) {
-    .titulo-catalogo {
-        flex-direction: column !important;
-        text-align: center !important;
-    }
+  .titulo-catalogo {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
 
-    .btn-group-catalogo {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        width: 100% !important;
-        margin-top: 10px !important;
-    }
+  .btn-group-catalogo {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
 
-    .btn-group-catalogo a {
-        margin: 6px !important;
-    }
+  .btn-group-catalogo a {
+    margin: 6px !important;
+  }
 }
 
 .btn-listar {
-    background: #b76e79;
-    color: #fff;
-    font-weight: 400;
-    border-radius: 12px;
-    padding: 0.6rem 1.2rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(196, 41, 106, 0.3);
+  background: #b76e79;
+  color: #fff;
+  font-weight: 400;
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(196, 41, 106, 0.3);
 }
 
 .btn-listar:hover {
-    background: #8c4a56;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(196, 41, 106, 0.4);
+  background: #8c4a56;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(196, 41, 106, 0.4);
 }
 
 @media (max-width: 768px) {
-    .btn-listar {
-        width: 100%;
-    }
+  .btn-listar {
+    width: 100%;
+  }
 }
 
-.btn-calendar{
-    background-color:#b76e79;
-    color:white;
-    border-radius:8px;
+.btn-calendar {
+  background-color: #b76e79;
+  color: white;
+  border-radius: 8px;
 }
-.btn-calendar:hover{
-    background-color:#b76e79;
-    color:white;
+.btn-calendar:hover {
+  background-color: #b76e79;
+  color: white;
 }
 
 /* 📌 ESTILO AMANDA BOUTIQUE PARA EL CALENDARIO */
 #calendar {
-    background: white;
-    padding: 15px;
-    border-radius: 20px;
-    box-shadow: 0px 4px 12px rgba(255, 105, 180, 0.25);
+  background: white;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 12px rgba(255, 105, 180, 0.25);
 }
 .fc-toolbar-title {
-    color: #c22f6c !important;
-    font-weight: bold;
-    font-size: 1.6rem !important;
-    text-shadow: 1px 1px 3px rgba(255, 107, 180, .3);
+  color: #c22f6c !important;
+  font-weight: bold;
+  font-size: 1.6rem !important;
+  text-shadow: 1px 1px 3px rgba(255, 107, 180, 0.3);
 }
 .fc-button {
-    background-color: #b76e79 !important;
-    border: none !important;
-    font-size: 0.75rem !important;  /* letra más pequeña */
-    padding: 4px 8px !important;    /* reduce alto y ancho */
-    border-radius: 8px !important;  /* bordes suaves */
-    height: 28px !important;        /* más compacto */
-    font-weight: bold;
+  background-color: #b76e79 !important;
+  border: none !important;
+  font-size: 0.75rem !important; /* letra más pequeña */
+  padding: 4px 8px !important; /* reduce alto y ancho */
+  border-radius: 8px !important; /* bordes suaves */
+  height: 28px !important; /* más compacto */
+  font-weight: bold;
 }
 .fc-button:hover {
-    background-color: #a31f5b !important;
+  background-color: #a31f5b !important;
 }
 .fc-daygrid-event {
-    border-radius: 8px !important;
-    padding: 3px !important;
-    font-weight: bold;
-    color: white !important;
-    
+  border-radius: 8px !important;
+  padding: 3px !important;
+  font-weight: bold;
+  color: white !important;
 }
 
 /* 🔽 Reduce tamaño del calendario */
 .calendario-contenedor {
-    max-width: 850px;   /* Ajusta aquí el ancho (antes era full container) */
-    margin: auto;       /* Lo centra */
+  max-width: 850px; /* Ajusta aquí el ancho (antes era full container) */
+  margin: auto; /* Lo centra */
 }
 
 /* 🔽 Reduce espacios y alto para hacerlo más compacto */
 #calendar {
-    padding: 10px;
-    border-radius: 18px;
+  padding: 10px;
+  border-radius: 18px;
 }
 
 .fc-daygrid-day-number,        /* Números de los días */
@@ -352,15 +339,16 @@ footer a:hover { text-decoration: underline; }
 .fc-list-day-text,             /* Lista estilo texto */
 .fc-list-day-side-text,        /* Día en vista Lista */
 
-.fc-event-time {               /* Hora en eventos */
-    color: rgb(56, 54, 54) !important;
-    text-decoration: none !important;
+.fc-event-time {
+  /* Hora en eventos */
+  color: rgb(56, 54, 54) !important;
+  text-decoration: none !important;
 }
 
 .fc-event-title {
-    color: white!important;
-    text-decoration: none !important;
-}               /* Título de evento */
+  color: white !important;
+  text-decoration: none !important;
+} /* Título de evento */
 .text-center {
-    text-align: center;
+  text-align: center;
 }

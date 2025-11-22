@@ -4,6 +4,7 @@ from .models import Catalogo
 class CatalogoForm(forms.ModelForm):
     class Meta:
         model = Catalogo
+        exclude = ['codigo']
         fields = ['codigo','modelo', 'estilo', 'descripcion', 'precio', 'imagen_modelo']
         widgets = {
             "codigo": forms.TextInput(attrs={'class':'form-control'}),

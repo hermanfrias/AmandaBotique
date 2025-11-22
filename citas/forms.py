@@ -1,6 +1,6 @@
 from django import forms
 from .models import Cita
-from datetime import date
+
 
 class CitaForm(forms.ModelForm):
     class Meta:

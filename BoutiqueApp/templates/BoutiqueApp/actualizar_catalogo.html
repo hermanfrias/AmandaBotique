@@ -5,10 +5,7 @@
     <div class="card shadow-lg p-4 mx-auto border-0 rounded-4" style="max-width: 700px; background-color: #fff5fa;">
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="mb-3">
-                {{ form.codigo.label_tag }}
-                {{ form.codigo }}
-            </div>
+            
             <div class="mb-3">
                 {{ form.modelo.label_tag }}
                 {{ form.modelo }}
@@ -25,9 +22,12 @@
                 {{ form.precio.label_tag }}
                 {{ form.precio }}
             </div>
+
+            <!-- IMAGEN -->
             <div class="mb-3">
                 <label for="id_imagen_modelo" class="form-label fw-bold">Imagen del modelo</label>
                 {{ form.imagen_modelo }}
+
                 {% if form.instance.imagen_modelo %}
                 <div class="text-center mt-3">
                     <p class="text-muted">Imagen actual:</p>
@@ -37,6 +37,7 @@
                         style="max-height: 250px;">
                 </div>
                 {% endif %}
+
                 <div class="text-center mt-3 d-none" id="preview-container">
                     <p class="text-muted">Vista previa nueva:</p>
                     <img id="preview-imagen" 
@@ -44,6 +45,7 @@
                         style="max-height: 250px;" />
                 </div>
             </div>
+
             <div class="text-center mt-4 acciones-cell">
                 <button type="submit" class="btn btn-editar px-4 py-2 me-2">Guardar</button>
                 <a href="{% url 'listar_catalogo' %}" class="btn btn-volver px-4 py-2">Volver</a>
@@ -51,4 +53,15 @@
         </form>
     </div>
 </div>
+
+<script>
+// Vista previa de imagen
+document.getElementById('id_imagen_modelo').addEventListener('change', function(event) {
+    const previewContainer = document.getElementById('preview-container');
+    const previewImage = document.getElementById('preview-imagen');
+
+    previewContainer.classList.remove('d-none');
+    previewImage.src = URL.createObjectURL(event.target.files[0]);
+});
+</script>
 {% endblock %}
