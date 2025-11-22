@@ -4,6 +4,7 @@
     <h2 class="mb-4 text-center">Detalle de Cita</h2>
     <div class="card shadow-sm border-0 p-4" style="max-width: 600px; margin:auto;">
         <h4 class="mb-3">{{ cita.cliente }}</h4>
+        <p><strong>Teléfono:</strong> {{ cita.telefono|default:"-" }}</p>
         <p><strong>Fecha:</strong> {{ cita.fecha|date:"l d/m/Y"|capfirst }}</p>
         <p><strong>Hora:</strong> {{ cita.hora|time:"h:i A" }}</p>
         <p><strong>Acción:</strong> {{ cita.get_accion_display }}</p>

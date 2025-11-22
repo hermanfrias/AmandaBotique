@@ -19,6 +19,7 @@
             <thead class="table-dark">
                 <tr>
                     <th>Cliente</th>
+                    <th>Teléfono</th>
                     <th>
                         <a href="?orden=fecha" style="color:white; text-decoration:none;">Fecha Cita</a>
                     </th>
@@ -35,6 +36,7 @@
                 {% for cita in citas %}
                     <tr>
                         <td>{{ cita.cliente }}</td>
+                        <td>{{ cita.telefono }}</td>
                         <td>{{ cita.fecha|date:"l d/m/Y"|capfirst }}</td>
                         <td>{{ cita.hora|time:"h:i A" }}</td>
                         <td>{{ cita.accion }}</td>

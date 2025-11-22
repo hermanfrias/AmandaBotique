@@ -20,6 +20,7 @@ class Cita(models.Model):
     ]
 
     cliente = models.CharField(max_length=100)
+    telefono = models.CharField(max_length=15, blank=True, null=True)
     fecha = models.DateField()
     hora = models.TimeField()
     descripcion = models.TextField(blank=True, null=True)
@@ -38,6 +39,7 @@ class Cita(models.Model):
         ordering = ['fecha', 'hora']
 
     def __str__(self):
-        return f"{self.cliente} - {self.fecha} {self.hora} ({self.get_accion_display()})"
+        return f"{self.nombre} {self.apellido} - {self.fecha} {self.hora} ({self.get_accion_display()})"
+   
 
 

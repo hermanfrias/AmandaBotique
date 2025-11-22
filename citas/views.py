@@ -4,14 +4,7 @@ from .models import Cita
 from .forms import CitaForm
 from django.contrib import messages
 from django.http import JsonResponse
-# @login_required
-# def listar_citas(request):
-#     query = request.GET.get('buscar', '')
-#     if len(query) > 0:
-#         citas = Cita.objects.filter(cliente__icontains=query).order_by('cliente')
-#     else:       
-#         citas = Cita.objects.all()
-#     return render(request, 'citas/listar_citas.html', {'citas': citas})
+
 @login_required
 def listar_citas(request):
     # Búsqueda por cliente
