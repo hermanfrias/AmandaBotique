@@ -72,7 +72,8 @@ def dashboard_flujo(request):
     meses=[]
     ingresos_mes=[]
     gastos_mes=[]
-    queryset=movimientos.annotate(mes=TruncMonth('fecha')).values('mes').order_by('mes').distinct()
+    queryset = movimientos.annotate(mes=TruncMonth('fecha')).values('mes').distinct().order_by('mes')
+
     for q in queryset:
         mes=q['mes'].strftime('%B %Y')
         meses.append(mes)

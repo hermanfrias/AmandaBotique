@@ -1,18 +1,61 @@
 {% extends "BoutiqueApp/index.html" %}
 {% load static %}
+{% load l10n %}
+{% load humanize %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'flujo/css/flujo.css' %}">
 <div class="container py-5">
     <h2 class="text-pink fw-bold mb-4">Dashboard Flujo de Caja</h2>
     <div class="row mb-4">
-        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Total Ingresos USD</h4><h3>${{ total_ingresos_usd }}</h3></div></div>
-        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Total Gastos USD</h4><h3>${{ total_gastos_usd }}</h3></div></div>
-        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Saldo USD</h4><h3>${{ saldo_usd }}</h3></div></div>
+        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Total Ingresos USD</h4><h3>${{ total_ingresos_usd|localize }}</h3></div></div>
+        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Total Gastos USD</h4><h3>${{ total_gastos_usd|localize }}</h3></div></div>
+        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Saldo USD</h4><h3>${{ saldo_usd|localize }}</h3></div></div>
     </div>
     <div class="row mb-4">
-        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Total Ingresos Bs</h4><h3>{{ total_ingresos_bs}} Bs</h3></div></div>
-        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Total Gastos Bs</h4><h3>{{ total_gastos_bs }} Bs</h3></div></div>
-        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Saldo Bs</h4><h3>{{ saldo_bs }} Bs</h3></div></div>
+        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Total Ingresos Bs</h4><h3>{{ total_ingresos_bs|localize}} Bs</h3></div></div>
+        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Total Gastos Bs</h4><h3>{{ total_gastos_bs|localize }} Bs</h3></div></div>
+        <div class="col"><div class="card p-3 text-center" style="background:#fdebf2;"><h4>Saldo Bs</h4><h3>{{ saldo_bs|localize }} Bs</h3></div></div>
     </div>
+    <hr>
+<h3 class="text-pink fw-bold mb-4 text-center">Ingresos y Gastos Mensuales (USD)</h3>
+
+<canvas id="graficoFlujo"></canvas>
+
+<!-- Librería Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('graficoFlujo');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {{ meses|safe }},
+            datasets: [
+                {
+                    label: 'Ingresos (USD)',
+                    data: {{ ingresos_mes|safe }},
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Gastos (USD)',
+                    data: {{ gastos_mes|safe }},
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+</script>
+
 </div>
 {% endblock %}

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ClientesApp',
     'citas',
     'flujo',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -109,13 +110,25 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'es'
+
+USE_L10N = True
+
+LANGUAGE_CODE = 'es-ve'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
+
+USE_L10N = True
+
+USE_THOUSAND_SEPARATOR = True
+
+THOUSAND_SEPARATOR = '.'
+
+DECIMAL_SEPARATOR = ','
+
 
 
 # Static files (CSS, JavaScript, Images)
@@ -139,4 +152,7 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'perfil'
 LOGOUT_REDIRECT_URL = 'index'
 
+FORMAT_MODULE_PATH = [
+    'flujo.formats',
+]
 
