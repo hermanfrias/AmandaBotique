@@ -9,8 +9,8 @@
         <p><strong>Hora:</strong> {{ cita.hora|time:"h:i A" }}</p>
         <p><strong>Acción:</strong> {{ cita.get_accion_display }}</p>
         <p><strong>Fecha de Entrega:</strong> {{ cita.fecha_entrega|date:"l d/m/Y"|capfirst }}</p>
-        <p><strong>Medidas:</strong></p>
-        <p><strong>Copa:</strong> {{ cita.busto|default:"-" }}</p>
+        <p><strong>Medidas en centimetros:</strong></p>
+        <p><strong>Copa:</strong> {{ cita.copa|default:"-" }}</p>
         <p><strong>Busto:</strong> {{ cita.busto|default:"-" }}</p>
         <p><strong>Cintura:</strong> {{ cita.cintura|default:"-" }}</p>
         <p><strong>Largo:</strong> {{ cita.largo|default:"-" }}</p>
