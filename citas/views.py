@@ -80,13 +80,14 @@ def eventos_citas(request):
     
     citas = Cita.objects.all()
     eventos = []
-
     for c in citas:
         # Evento de fecha de cita (color rosa)
+        hora_12 = c.hora.strftime("%I:%M %p") if c.hora else ""
         eventos.append({
-            "title": f"{c.cliente} - {c.get_accion_display()}",
+            "title": f"{hora_12} - {c.cliente} - {c.get_accion_display()}",
             "start": str(c.fecha),
             "color": "#E91E63",
+            "allDay": True,
             "url": reverse("ver_cita", args=[c.pk])  # 👈
         })
 
@@ -96,6 +97,7 @@ def eventos_citas(request):
                 "title": f"Entrega: {c.cliente}",
                 "start": str(c.fecha_entrega),
                 "color": "#6A1B9A",
+                "allDay": True,
                 "url": reverse("ver_cita", args=[c.pk])  # 👈
             })
 

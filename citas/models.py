@@ -24,9 +24,11 @@ class Cita(models.Model):
     fecha = models.DateField()
     hora = models.TimeField()
     descripcion = models.TextField(blank=True, null=True)
+    copa = models.CharField(max_length=5, blank=True, null=True)  
     busto = models.CharField(max_length=5, blank=True, null=True)  
     cintura = models.CharField(max_length=5, blank=True, null=True) 
-    largo = models.CharField(max_length=5, blank=True, null=True)  
+    largo = models.CharField(max_length=5, blank=True, null=True) 
+    tiras = models.CharField(max_length=5, blank=True, null=True) 
     otra = models.CharField(max_length=50, blank=True, null=True)   
     precio = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)  # nuevo campo
     abono = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)

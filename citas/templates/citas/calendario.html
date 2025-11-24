@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
             month: 'Mes',
             list: 'Lista'
         },
+        displayEventTime: true, // Mostrar hora si existe
+        allDayText: '', 
         eventClick: function(info) {
             info.jsEvent.preventDefault();  // Evitar que abra nueva pestaña
             if (info.event.url) {
